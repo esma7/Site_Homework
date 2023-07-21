@@ -33,38 +33,44 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>
-                            <i class="fab fa-angular fa-lg text-danger me-1"></i> <strong>Angular Project</strong>
-                          </td>
-                          <td>Albert Cook</td>
-                          <td>LAber</td>
-                          <td>
-                            22.11.22
-                          </td>
-                          <td><a href="">
-                              <img width="90px" src="https://imgv3.fotor.com/images/blog-cover-image/part-blurry-image.jpg" alt="">
-                            </a></td>
-                         
-                          <td><span class="badge bg-label-success me-1">Active</span></td>
-                          <td>
 
-                            <a href="">
-                              <button type="button" class="btn btn-success btn-sm" data-bs-toggle="dropdown">
-                                <i class="bx bx-edit-alt me-1"></i> Edit
-                              </button>
-                            </a>
-                            <a href="">
-                              <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="dropdown">
-                                <i class="bx bx-trash me-1"></i> Delete
-                              </button></a>
+                        
+                        <?php foreach ($get_all as $items) { ?>
+                            <tr>
+                            <td><?php echo $items->n_id; ?></td>
+                            <td>
+                              <i class="fab fa-angular fa-lg text-danger me-1"></i> <strong><?php echo $items->n_title; ?></strong>
+                            </td>
+                            <td><?php echo $items->n_description; ?></td>
+                            <td><?php echo $items->n_category; ?></td>
+                            <td>
+                            <?php echo date("d-m-Y H:i", strtotime($items->n_date)); ?>
+                            </td>
+                            <td><a href="">
+                                <img width="90px" src="<?php echo base_url('uploads/news/'. $items->n_file); ?>" alt="">
+                              </a></td>
 
+                            <td><?php if($items->n_status =="Active"){ ?>
+                              <span class="badge bg-label-success me-1"><?php echo $items->n_status; ?></span>
+                            <?php }else if($items->n_status =="Deactive"){?>
+                              <span class="badge bg-label-danger me-1"><?php echo $items->n_status; ?></span>
+                            <?php }else{?>
+                             <span class="badge bg-label-info me-1">Upss</span> 
+                            <?php } ?></td>
+                            <td>
 
-
-                          </td>
-                        </tr>
-                       
+                              <a href="">
+                                <button type="button" class="btn btn-success btn-sm" data-bs-toggle="dropdown">
+                                  <i class="bx bx-edit-alt me-1"></i> Edit
+                                </button>
+                              </a>
+                              <a href="">
+                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="dropdown">
+                                  <i class="bx bx-trash me-1"></i> Delete
+                                </button></a>
+                            </td>
+                          </tr>
+                        <?php } ?>
 
                       </tbody>
                     </table>
