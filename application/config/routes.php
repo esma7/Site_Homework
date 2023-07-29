@@ -65,6 +65,9 @@ $route['a_dashboard'] = 'AdminController/dashboard';
 $route['a_news_list'] = 'AdminController/news_list';
 $route['a_news_create'] = 'AdminController/news_create';
 $route['a_news_create_act'] = 'AdminController/news_create_act';
+$route['a_news_delete/(.*)'] = 'AdminController/deleteNews/$1';
+$route['a_news_update/(.*)'] = 'AdminController/update_news/$1';
+$route['a_news_update_act/(.*)'] = 'AdminController/update_newsAct/$1';
 
 
 

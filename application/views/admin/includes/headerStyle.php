@@ -53,9 +53,36 @@
     <script src="<?php echo base_url("public/admin"); ?>/assets/js/config.js"></script>
   </head>
 
+  <style>
+   
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+  
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: lightgray;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lightsalmon;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: pink;
+}
+  </style>
+ 
   <body>
 
      <!-- Layout wrapper -->
      <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
         <!-- Menu -->
+        
+       
+ 
