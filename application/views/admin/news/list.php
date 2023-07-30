@@ -35,9 +35,9 @@
                       <tbody>
 
                         
-                        <?php foreach ($get_all as $items) { ?>
+                        <?php  $sira =0; foreach ($get_all as $items) { $sira++ ?>
                             <tr>
-                            <td><?php echo $items->n_id; ?></td>
+                            <td><?php echo $sira; ?></td>
                             <td>
                               <i class="fab fa-angular fa-lg text-danger me-1"></i> <strong><?php echo $items->n_title; ?></strong>
                             </td>
@@ -58,7 +58,11 @@
                              <span class="badge bg-label-info me-1">Upss</span> 
                             <?php } ?></td>
                             <td>
-
+                              <a href="<?php echo base_url('a_news_update/'. $items->n_id);?>">
+                                <button  type="button" class="btn btn-info btn-sm">
+                                  <i class="bx bx-detail"></i>
+                                </button>
+                              </a>
                               <a href="<?php echo base_url('a_news_update/'. $items->n_id); ?>">
                                 <button type="button" class="btn btn-warning btn-sm" >
                                   <i class="bx bx-edit-alt"></i>
