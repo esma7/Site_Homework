@@ -46,9 +46,13 @@
                             <td>
                             <?php echo date("d-m-Y H:i", strtotime($items->n_date)); ?>
                             </td>
-                            <td><a href="">
-                                <img width="90px" src="<?php echo base_url('uploads/news/'. $items->n_file); ?>" alt="">
-                              </a></td>
+                            <td><?php if ($items->n_file_ext == '.mp3') { ?>
+                                                        <audio style="width: 180px;" controls>                                                          
+                                                            <source  src="<?php echo base_url('uploads/news/'. $items->n_file); ?>" type="audio/mpeg">
+                                                    </audio>
+                                                    <?php } else { ?>
+                                                        <img width="150px" src="<?php echo base_url('uploads/news/'. $items->n_file); ?>" alt="">
+                                                    <?php } ?></td>
 
                             <td><?php if($items->n_status =="Active"){ ?>
                               <span class="badge bg-label-success me-1"><?php echo $items->n_status; ?></span>
@@ -58,7 +62,7 @@
                              <span class="badge bg-label-info me-1">Upss</span> 
                             <?php } ?></td>
                             <td>
-                              <a href="<?php echo base_url('a_news_update/'. $items->n_id);?>">
+                              <a href="<?php echo base_url('a_news_view/'. $items->n_id);?>">
                                 <button  type="button" class="btn btn-info btn-sm">
                                   <i class="bx bx-detail"></i>
                                 </button>

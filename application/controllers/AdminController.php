@@ -137,13 +137,13 @@ class AdminController extends CI_Controller{
                     'n_file_ext'     => $upload_ext,
                     // 'n_image'        => ,
                     // 'n_creator_id'   => ,
-                    // 'n_update_id'    => ,
+                    // 'n_update_id'    => , 
                     'n_update_date'  => date("Y-m-d H:i:s"),
                     
         
                  ];
-                $this->db->insert('news', $data);
-                redirect(base_url('a_news_list'));
+                 $this->db->where('n_id', $id)->update('news', $data);
+                 redirect(base_url('a_news_list')); 
             }else{
                 $data =[
                     'n_title'        => $title,
@@ -160,11 +160,17 @@ class AdminController extends CI_Controller{
         
                  ];
                  $this->db->where('n_id', $id)->update('news', $data);
-                redirect(base_url('a_news_list')); 
+                 redirect(base_url('a_news_list'));  
+                 
             }
         }else{
             redirect($_SERVER['HTTP_REFERER']);    
         }
 }
-
+ 
+    public function view_news($id){
+        $data["single_news"] = $this->db->where('n_id', $id)->get('news')->row_array();
+        $this->load->view('admin/news/detail',$data);
+       
+    }
 }
