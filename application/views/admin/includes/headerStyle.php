@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<?php
+ if(!isset($_SESSION['admin_id']) || !isset($_SESSION['admin_username'])){
+  $this->session->set_flashdata('err','Ilk once giris edin');
+  redirect( base_url('a_login'));
+ }
+
+
+?>
+
 
 <html
   lang="en"

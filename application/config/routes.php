@@ -51,6 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'UserController';
 
+//User
 $route['index'] = 'UserController/index';
 $route['about'] = 'UserController/about';
 $route['contact'] = 'UserController/contact';
@@ -61,13 +62,20 @@ $route['teacher'] = 'UserController/teacher';
 
 //Admin
 $route['a_login'] = 'AdminController/index';
+$route['a_loginAct'] = 'AdminController/loginAct';
+$route['a_loginout'] = 'AdminController/logout';
+
 $route['a_dashboard'] = 'AdminController/dashboard';
 $route['a_news_list'] = 'AdminController/news_list';
+
 $route['a_news_create'] = 'AdminController/news_create';
 $route['a_news_create_act'] = 'AdminController/news_create_act';
+
 $route['a_news_delete/(.*)'] = 'AdminController/deleteNews/$1';
+
 $route['a_news_update/(.*)'] = 'AdminController/update_news/$1';
 $route['a_news_update_act/(.*)'] = 'AdminController/update_newsAct/$1';
+
 $route['a_news_view/(.*)'] = 'AdminController/view_news/$1';
 
 
