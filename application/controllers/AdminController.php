@@ -55,12 +55,14 @@ class AdminController extends CI_Controller
 
     public function dashboard()
     {
-        $this->load->view('admin/index');
+        $data['admin'] = $this->db->select('a_id, a_name, a_username, a_status, a_email, a_img')->where('a_id',$_SESSION['admin_id'])->get('admin')->row_array();
+        $this->load->view('admin/index', $data);
     }
 
     public function news_list()
     {
-        $data["get_all"] = $this->db->order_by('n_id', 'desc')->get("news")->result();
+        
+        $data["get_all"] = $this->db->where('n_creator_id',$_SESSION['admin_id'])->order_by('n_id', 'desc')->get("news")->result();
 
         // print_r('<pre>');
         // print_r($data["get_all"]);
@@ -109,6 +111,8 @@ class AdminController extends CI_Controller
                     'n_status'       => $status,
                     'n_file'         => $upload_name,
                     'n_file_ext'     => $upload_ext,
+                    'n_creator_id' =>$_SESSION['admin_id'],
+                    'n_updater_id' =>$_SESSION['admin_id'],
                     // 'n_image'        => ,
                     // 'n_creator_id'   => ,
                     'n_create_date'  => date("Y-m-d H:i:s"),
@@ -124,6 +128,8 @@ class AdminController extends CI_Controller
                     'n_date'         => $date,
                     'n_category'     => $category,
                     'n_status'       => $status,
+                    'n_creator_id' =>$_SESSION['admin_id'],
+                    'n_updater_id' =>$_SESSION['admin_id'],
                     // 'n_file'         => $upload_name,
                     // 'n_file_ext'     => $upload_ext,
                     // 'n_image'        => ,
