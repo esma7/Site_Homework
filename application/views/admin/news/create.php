@@ -8,6 +8,8 @@
         float:left;
     }
 </style>
+   
+
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row">
             <div class="col-lg-12 mb-4 order-0">
@@ -32,18 +34,22 @@
                                <label for="category">Category</label>
                                 <select name="category" id="category" class="form-control">
                                     <option value="">-SELECT-</option>
-                                    <option value="Web_design">Web design</option>
-                                    <option value="Software_programming">Software programming</option>
-                                    <option value="Graphic_design">Graphic design</option>
-                                    <option value="UX/UI_design">UX/UI design</option>
+                                    
+                                    <?php foreach($category as $items) {?>
+                                        <option value="<?php echo $items['c_id']; ?>"><?php echo $items['c_name']; ?></option>
+                                    <?php }?>
+                                    
                                 </select>
                                </div>
                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 fleft m-lg-1">
                                <label for="status">Status</label>
                                 <select name="status" id="status" class="form-control">
                                     <option value="">SELECT</option>
-                                    <option value="Active">Active</option>
-                                    <option value="Deactive">Deactive</option>
+
+                                    <?php foreach($status as $items) {?>
+                                       <option value="<?php echo $items['s_id']; ?>"><?php echo $items['s_status']; ?></option>
+                                    <?php }?>
+
                                 </select>
                                </div>
                                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 fleft m-lg-1">

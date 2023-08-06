@@ -18,7 +18,7 @@
                             your profile.
                           </p>
 
-                          <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
+                          <a href="<?php echo base_url('a_news_list');?>" class="btn btn-sm btn-outline-primary">View Badges</a>
                         </div>
                       </div>
                       <div class="col-sm-5 text-center text-sm-left">

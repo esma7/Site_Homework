@@ -42,7 +42,7 @@
                               <i class="fab fa-angular fa-lg text-danger me-1"></i> <strong><?php echo $items->n_title; ?></strong>
                             </td>
                             <td><?php echo $items->n_description; ?></td>
-                            <td><?php echo $items->n_category; ?></td>
+                            <td><?php echo $items->c_name; ?></td>
                             <td>
                             <?php echo date("d-m-Y H:i", strtotime($items->n_date)); ?>
                             </td>
@@ -54,10 +54,10 @@
                                                         <img width="150px" src="<?php echo base_url('uploads/news/'. $items->n_file); ?>" alt="">
                                                     <?php } ?></td>
 
-                            <td><?php if($items->n_status =="Active"){ ?>
-                              <span class="badge bg-label-success me-1"><?php echo $items->n_status; ?></span>
-                            <?php }else if($items->n_status =="Deactive"){?>
-                              <span class="badge bg-label-danger me-1"><?php echo $items->n_status; ?></span>
+                            <td><?php if($items->s_status =="Active"){ ?>
+                              <span class="badge bg-label-success me-1"><?php echo $items->s_status; ?></span>
+                            <?php }else if($items->s_status =="Deactive"){?>
+                              <span class="badge bg-label-danger me-1"><?php echo $items->s_status; ?></span>
                             <?php }else{?>
                              <span class="badge bg-label-info me-1">Upss</span> 
                             <?php } ?></td>

@@ -10,6 +10,8 @@
         float:left;
     }
 </style>
+
+
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row">
             <div class="col-lg-12 mb-4 order-0">
@@ -33,19 +35,20 @@
                                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 fleft m-lg-1">
                                <label for="category">Category</label>
                                 <select name="category" id="category" class="form-control">
-                                    <option <?php if($single_news->n_category == ""){ echo "SELECTED";}?> value="">-SELECT-</option>
-                                    <option <?php if($single_news->n_category == "Web_design"){ echo "SELECTED";}?> value="Web_design">Web design</option>
-                                    <option <?php if($single_news->n_category == "Software_programming"){ echo "SELECTED";}?> value="Software_programming">Software programming</option>
-                                    <option <?php if($single_news->n_category == "Graphic_design"){ echo "SELECTED";}?> value="Graphic_design">Graphic design</option>
-                                    <option <?php if($single_news->n_category == "UX/UI_design"){ echo "SELECTED";}?>value="UX/UI_design">UX/UI design</option>
+                                    <option value="">-Select-</option>
+                                    <?php foreach($category as $item){?>
+                                        <option <?php if($single_news->n_category == $item['c_id']){ echo "SELECTED";}?> value="<?php echo $item['c_id']; ?>"><?php echo $item['c_name']; ?></option>
+                                    <?php } ?>
+                                    
                                 </select>
                                </div>
                                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 fleft m-lg-1">
                                <label for="status">Status</label>
                                 <select name="status" id="status" class="form-control">
-                                    <option <?php if($single_news->n_status == ""){ echo "SELECTED";}?> value="">SELECT</option>
-                                    <option <?php if($single_news->n_status == "Active"){ echo "SELECTED";}?> value="Active">Active</option>
-                                    <option <?php if($single_news->n_status == ""){ echo "SELECTED";}?> value="Deactive">Deactive</option>
+                                <option value="">Select</option>
+                                    <?php foreach($status as $item){?>
+                                        <option <?php if($single_news->n_status == $item['s_id']){ echo "SELECTED";}?> value="<?php echo $item['s_id']; ?>"><?php echo $item['s_status']; ?></option>
+                                    <?php } ?>
                                 </select>
                                </div>
                                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 fleft m-lg-1">

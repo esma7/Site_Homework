@@ -62,7 +62,13 @@ class AdminController extends CI_Controller
     public function news_list()
     {
         
-        $data["get_all"] = $this->db->where('n_creator_id',$_SESSION['admin_id'])->order_by('n_id', 'desc')->get("news")->result();
+        $data["get_all"] = $this->db
+        ->where('n_creator_id',$_SESSION['admin_id'])
+        ->join('category','category.c_id = news.n_category','left')
+        ->join('status','status.s_id = news.n_status','left')
+        ->order_by('n_id', 'desc')
+        ->get("news")
+        ->result();
 
         // print_r('<pre>');
         // print_r($data["get_all"]);
@@ -72,7 +78,12 @@ class AdminController extends CI_Controller
     }
     public function news_create()
     {
-        $this->load->view('admin/news/create');
+        $data['category']=$this->db->get('category')->result_array();
+        $data['status']=$this->db->get('status')->result_array();
+       
+
+        
+        $this->load->view('admin/news/create', $data);
     }
     public function deleteNews($id)
     {
@@ -147,7 +158,14 @@ class AdminController extends CI_Controller
     }
     public function update_news($id)
     {
+        $data['category']=$this->db->get('category')->result_array();
+        $data['status']=$this->db->get('status')->result_array();
         $data["single_news"] = $this->db->where('n_id', $id)->get('news')->row();
+       
+
+        // print_r('<pre>');
+        // print_r($data["single_news"]);
+        // die();
         if ($data["single_news"]) {
             $this->load->view('admin/news/edit', $data);
         } else {
@@ -218,7 +236,11 @@ class AdminController extends CI_Controller
 
     public function view_news($id)
     {
-        $data["single_news"] = $this->db->where('n_id', $id)->get('news')->row_array();
+        $data["single_news"] = $this->db
+        ->where('n_id', $id)
+        ->join('category','category.c_id = news.n_category','left')
+        ->join('status','status.s_id = news.n_status','left')
+        ->get('news')->row_array();
         $this->load->view('admin/news/detail', $data);
     }
 }
