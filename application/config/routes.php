@@ -57,8 +57,10 @@ $route['about'] = 'UserController/about';
 $route['contact'] = 'UserController/contact';
 $route['blog'] = 'UserController/blog';
 $route['course'] = 'UserController/course';
-$route['single'] = 'UserController/single';
+$route['category'] = 'UserController/category';
+$route['single/(.*)'] = 'UserController/single/$1';
 $route['teacher'] = 'UserController/teacher';
+$route['message'] = 'UserController/send_message';
 
 //Admin
 $route['a_login'] = 'AdminController/index';

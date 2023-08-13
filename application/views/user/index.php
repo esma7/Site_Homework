@@ -1,51 +1,90 @@
 <?php $this->load->view('user/includes/headerStyle'); ?>
 <?php $this->load->view('user/includes/header'); ?>
 
-    
+
+
+
+
+<!-- Carousel Start -->
+
+<style type="text/css">
+    .fon {
+        margin: 8px;
+    }
+
+    .iconcolor {
+        color: orange;
+    }
+    .sekil{
+        width:25px;
+        height:25px;
+        background:transparent;
+        border-radius: 50%;
+        margin-right:5px;
+    }
+    .xbrsekil{
+        width: 100%;
+        height:200px;
+    }
+</style>
+
 
 
     <!-- Carousel Start -->
-    <div class="container-fluid p-0 pb-5 mb-5">
-        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#header-carousel" data-slide-to="1"></li>
-                <li data-target="#header-carousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active" style="min-height: 300px;">
-                    <img class="position-relative w-100" src="<?php echo base_url('public/user/'); ?>img/carousel-1.jpg" style="min-height: 300px; object-fit: cover;">
-                    <div class="carousel-caption d-flex align-items-center justify-content-center">
-                        <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                            <h1 class="display-3 text-white mb-md-4">Best Education From Your Home</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+        <div class="container-fluid p-0 pb-5 mb-5">
+            <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#header-carousel" data-slide-to="1"></li>
+                    <li data-target="#header-carousel" data-slide-to="2"></li>
+                   
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="min-height: 300px;">
+                        <img  style="height:768px!important;" class="position-relative w-100" src="<?php echo base_url('uploads/news/' . $web_design['n_file']); ?>" style="min-height: 200px; object-fit: cover;">
+                        <div class="carousel-caption d-flex align-items-center justify-content-center">
+                            <div class="p-5" style="width: 100%; max-width: 900px;">
+                                <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
+                                <h1 class="display-3 text-white mb-md-4"><?php echo $web_design['n_title']; ?></h1>
+                                <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2"><?php echo $web_design['c_name']; ?></a>
+                                <span style="background:transparent; border:none;" class=" btn btn-info text-primary py-md-2 px-md-4 mt-2 ">Jan 01, 2050</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item" style="min-height: 300px;">
-                    <img class="position-relative w-100" src="<?php echo base_url('public/user/'); ?>img/carousel-2.jpg" style="min-height: 300px; object-fit: cover;">
-                    <div class="carousel-caption d-flex align-items-center justify-content-center">
-                        <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                            <h1 class="display-3 text-white mb-md-4">Best Online Learning Platform</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                    <div class="carousel-item" style="min-height: 300px;">
+                        <img  style="height:768px!important;" class="position-relative w-100" src="<?php echo base_url('uploads/news/' . $network_admin['n_file']); ?>" style="min-height: 200px; object-fit: cover;">
+                        <div class="carousel-caption d-flex align-items-center justify-content-center">
+                            <div class="p-5" style="width: 100%; max-width: 900px;">
+                                <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
+                                <h1 class="display-3 text-white mb-md-4"><?php echo $system_admin['n_title']; ?></h1>
+                                <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2"><?php echo $system_admin['c_name']; ?></a>
+                                <span style="background:transparent; border:none;" class=" btn btn-info text-primary py-md-2 px-md-4 mt-2 ">Jan 01, 2050</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item" style="min-height: 300px;">
-                    <img class="position-relative w-100" src="<?php echo base_url('public/user/'); ?>img/carousel-3.jpg" style="min-height: 300px; object-fit: cover;">
-                    <div class="carousel-caption d-flex align-items-center justify-content-center">
-                        <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                            <h1 class="display-3 text-white mb-md-4">New Way To Learn From Home</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                    <div class="carousel-item" style="min-height: 300px;">
+                        <img  style="height:768px!important;" class="position-relative w-100" src="<?php echo base_url('uploads/news/' . $help_desk['n_file']); ?>" style="min-height: 200px; object-fit: cover;">
+                        <div class="carousel-caption d-flex align-items-center justify-content-center">
+                            <div class="p-5" style="width: 100%; max-width: 900px;">
+                                <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
+                                <h1 class="display-3 text-white mb-md-4"><?php echo $network_admin['n_title']; ?></h1>
+                                <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2"><?php echo $network_admin['c_name']; ?></a>
+                                <span style="background:transparent; border:none;" class=" btn btn-info text-primary py-md-2 px-md-4 mt-2 ">Jan 01, 2050</span>
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
-    </div>
+
+
+
+
+
+
+
+
     <!-- Carousel End -->
 
 
@@ -54,14 +93,15 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-5">
-                    <img class="img-fluid rounded mb-4 mb-lg-0" src="<?php echo base_url('public/user/'); ?>img/about.jpg" alt="">
+                    <img  class="img-fluid rounded mb-4 mb-lg-0" src="<?php echo base_url('uploads/news/'); ?>baku_pese_logo.png" alt="">
                 </div>
                 <div class="col-lg-7">
-                    <div class="text-left mb-4">
-                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
-                        <h1>Innovative Way To Learn</h1>
+                    <div class="text-center mb-4">
+                        <h5 style="letter-spacing: 5px; text-align:center!important;" class="text-primary text-uppercase mb-3">Haqqımızda</h5>
+                        <h1><img  style="width:150px; height:150px;  border-radius:50%;"src="<?php echo base_url('uploads/news/'); ?>pese_tehsil_agentlik.jpg" alt=""></h1>
+                       
                     </div>
-                    <p>Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo dolores et sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus gubergren sit rebum clita amet, sea est sea vero sed et. Sadipscing labore tempor at sit dolor clita consetetur diam. Diam ut diam tempor no et, lorem dolore invidunt no nonumy stet ea labore, dolor justo et sit gubergren diam sed sed no ipsum. Sit tempor ut nonumy elitr dolores justo aliquyam ipsum stet</p>
+                    <p style="line-height:1.6 !important;">Peşə təhsili sahəsində dövlət siyasətinin həyata keçirilməsini təmin edən və əlaqələndirən, Azərbaycan Respublikası Elm və Təhsil Nazirliyinin tabeliyindəki peşə təhsili müəssisələrinin fəaliyyətini təşkil edən icra hakimiyyəti orqanıdır.</p>
                     <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                 </div>
             </div>
@@ -164,114 +204,57 @@
                 <h1>Our Popular Courses</h1>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/course-1.jpg" alt="">
-                        <div class="bg-secondary p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
-                            </div>
-                            <a class="h5" href="">Web design & development courses for beginner</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$99</h5>
+
+                <?php foreach ($slider_bottom_side as $item) { ?>
+                    <div   class="col-lg-4 col-md-6 mb-4">
+                        <div  class="rounded overflow-hidden mb-2" style="height:400px !important;" >
+                            <img class="img-fluid w-100 xbrsekil"     src="<?php echo base_url('uploads/news/' . $item['n_file']); ?>" alt="">
+                            <div class="bg-secondary p-4">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div class="d-flex align-items-center">
+                                    <?php if($item['a_img']){?>
+                                        <img  class="rounded-circle mr-2 sekil" src="<?php echo base_url('uploads/admin/'. $item['a_img']);?>" alt="">
+                                    <?php } else{?>
+                                        <img class="sekil" src="https://hivedinn.s3.amazonaws.com/upload/photos/d-avatar.jpg?cache=0" alt class="w-px-40 h-auto rounded-circle" />
+                                    <?php } ?>
+                                    <small class="m-0"><?php echo $item['a_name']; ?></small>
+                                    </div>
+                                    <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
+                                </div>
+
+                                <?php if (strlen($item['n_title']) > 30){ ?>
+                                 <a class="h6  mb-3 text-info text-uppercase font-weight-bold" 
+                                 href="<?php echo base_url('single/'. $item['n_id']); ?>"><?php  echo mb_substr(($item['n_title']), 0, 20, 'UTF-8') . '...'; ?></a>
+
+                                   
+                                <?php } else{ ?>
+                                    <a class="h6  mb-3 text-info text-uppercase font-weight-bold"
+                                     href="<?php echo base_url('single/'. $item['n_id']); ?>"><?php  echo $item['n_title']; ?></a>
+                                  
+                                <?php } ?>
+                                
+                                
+                                
+                                
+
+
+
+                                <div  class="border-top mt-4 pt-4">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="m-0"><i class="fa fa-circle text-primary mr-2" aria-hidden="true"></i> <?php echo $item['c_name']; ?></h6>
+                                        <h5 class="m-0">$99</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/course-2.jpg" alt="">
-                        <div class="bg-secondary p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
-                            </div>
-                            <a class="h5" href="">Web design & development courses for beginner</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$99</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/course-3.jpg" alt="">
-                        <div class="bg-secondary p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
-                            </div>
-                            <a class="h5" href="">Web design & development courses for beginner</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$99</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/course-4.jpg" alt="">
-                        <div class="bg-secondary p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
-                            </div>
-                            <a class="h5" href="">Web design & development courses for beginner</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$99</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/course-5.jpg" alt="">
-                        <div class="bg-secondary p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
-                            </div>
-                            <a class="h5" href="">Web design & development courses for beginner</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$99</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/course-6.jpg" alt="">
-                        <div class="bg-secondary p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
-                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
-                            </div>
-                            <a class="h5" href="">Web design & development courses for beginner</a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">$99</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                <?php } ?>
+
+
+
+
+
             </div>
         </div>
     </div>
@@ -413,31 +396,31 @@
         <div class="container py-5">
             <div class="text-center mb-5">
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Testimonial</h5>
-                <h1>What Say Our Students</h1>
+                <h1>Məzunlarımız</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="owl-carousel testimonial-carousel">
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="<?php echo base_url('public/user/'); ?>img/testimonial-1.jpg" alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
+                            <h4 class="font-weight-normal mb-4">"3 il yüksək texniki peşə təhsili almaq mənə mane olmur, əksinə avantajdır. Bu, bizə daha yaxşı öyrənmək, maraqlandığımız sahə üzrə dərin biliyə sahib olmaq imkanı verir.  Tələbə yoldaşlarım arasında əvvəlki illərdə peşə təhsili alan, ancaq universitetə müsabiqədənkənar qəbul imkanı verən yüksək texniki peşə təhsilinə yenidən üz tutanlar da çoxdur”.</h4>
+                            <img class="img-fluid mx-auto mb-3" src="<?php echo base_url('uploads/news/'); ?>sevinc.jpg" alt="">
+                            <h5 class="m-0">Sevinc Abdullayeva</h5>
+                            <span>Sənaye və İnnovasiyalar üzrə Bakı Dövlət Peşə Təhsil Mərkəzində Yüksək texniki peşə üzrə Qrafik dizayn tələbəsi</span>
                         </div>
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="<?php echo base_url('public/user/'); ?>img/testimonial-2.jpg" alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
+                            <h4 class="font-weight-normal mb-4">“İstəyirdim əlimdə bir peşəm olsun. Avtomobillərə xüsusi marağım olduğunu nəzərə alaraq bu ixtisaslarla maraqlandım. Təhsil aldığım müəssisənin bu arzumu gerçəkləşdirmək üçün ən yaxşısı olduğunu öyrəndim.Burda təhsilimizin 70 faizi təcrübədir.Mənim üçün çox maraqlı olan bir işi öyrənirəm. Üstəlik, buradakı təhsilimi tamamladıqdan sonra texniki universitetlərin birində təhsil almaq imkanım var. Bu da o deməkdir ki, burdakı təhsilimi tamamladıqdan sonra rahatca iş də tapa bilərəm, universitetdə təhsilimi davam etdirə də”</h4>
+                            <img class="img-fluid mx-auto mb-3" src="<?php echo base_url('uploads/news/'); ?>abis.jpg" alt="">
+                            <h5 class="m-0">Abış Abışov</h5>
+                            <span>Sənaye və İnnovasiyalar üzrə Bakı Dövlət Peşə Təhsil Mərkəzinin Nəqliyyat vasitələrinin texniki istismarı ixtisası üzrə tələbəsi</span>
                         </div>
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="<?php echo base_url('public/user/'); ?>img/testimonial-3.jpg" alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
+                            <h4 class="font-weight-normal mb-4">Mədəniyyət və Sənətkarlıq üzrə Bakı Dövlət Peşə Təhsil Mərkəzi</h4>
+                            <img class="img-fluid mx-auto mb-3" src="<?php echo base_url('uploads/news/'); ?>5nomre.jpg" alt="">
+                            <h5 class="m-0">5 nömrəli Bakı Peşə Məktəbi</h5>
+                            <span>13 nömrəli Bakı Peşə Məktəbi/15 nömrəli Bakı Peşə Liseyi</span>
                         </div>
                     </div>
                 </div>
@@ -454,43 +437,45 @@
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Our Blog</h5>
                 <h1>Latest From Our Blog</h1>
             </div>
+
             <div class="row pb-3">
+               
                 <div class="col-lg-4 mb-4">
                     <div class="blog-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/blog-1.jpg" alt="">
+                        <img style="height:300px;" class="img-fluid" src="<?php echo base_url('uploads/news/'. $web_design['n_file']); ?>" alt="">
                         <a class="blog-overlay text-decoration-none" href="">
-                            <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita</h5>
-                            <p class="text-primary m-0">Jan 01, 2050</p>
+                            <h5 class="text-white mb-3"><?php echo $web_design['n_title'];  ?></h5>
+                            <p class="text-primary m-0"><?php echo  date("d.m.Y", strtotime($web_design['n_date']));  ?></p>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-4">
                     <div class="blog-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/blog-2.jpg" alt="">
+                        <img style="height:300px;" class="img-fluid" src="<?php  echo base_url('uploads/news/'. $system_admin['n_file']); ?>" alt="">
                         <a class="blog-overlay text-decoration-none" href="">
-                            <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita</h5>
-                            <p class="text-primary m-0">Jan 01, 2050</p>
+                            <h5 class="text-white mb-3"><?php echo $system_admin['n_title'];  ?></h5>
+                            <p class="text-primary m-0"><?php echo  date("d.m.Y", strtotime($system_admin['n_date'])); ?></p>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-4 mb-4">
                     <div class="blog-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/blog-3.jpg" alt="">
+                        <img  style="height:300px;"class="img-fluid" src="<?php echo base_url('uploads/news/'. $network_admin['n_file']); ?>" alt="">
                         <a class="blog-overlay text-decoration-none" href="">
-                            <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita</h5>
-                            <p class="text-primary m-0">Jan 01, 2050</p>
+                            <h5 class="text-white mb-3"><?php echo $network_admin['n_title'];  ?></h5>
+                            <p class="text-primary m-0"><?php echo  date("d.m.Y", strtotime($network_admin['n_date'])); ?></p>
                         </a>
                     </div>
                 </div>
+             
             </div>
+
+
         </div>
     </div>
     <!-- Blog End -->
 
-     <!-- Footer Start -->
+    <!-- Footer Start -->
     <?php $this->load->view('user/includes/footer'); ?>
     <!-- Footer End -->
     <?php $this->load->view('user/includes/footerScript'); ?>
-
-
-  

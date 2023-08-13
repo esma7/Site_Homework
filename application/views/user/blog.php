@@ -24,60 +24,25 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="row pb-3">
+                    <?php foreach($slider_left_side as $left_slide){?>
                         <div class="col-lg-6 mb-4">
                             <div class="blog-item position-relative overflow-hidden rounded mb-2">
-                                <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/blog-1.jpg" alt="">
+                                <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/carousel-1.jpg" alt="">
                                 <a class="blog-overlay text-decoration-none" href="">
-                                    <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita</h5>
-                                    <p class="text-primary m-0">Jan 01, 2050</p>
+                                    <h5 class="text-white mb-3"><?php echo $left_slide['n_title']; ?></h5>
+                                    
+                                    
+                                    <p class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                        href="">System Administrator</p >
+                                        <p class="text-primary m-0"><?php echo  date("d-m-Y", strtotime($left_slide['n_date']));?></p>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-6 mb-4">
-                            <div class="blog-item position-relative overflow-hidden rounded mb-2">
-                                <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/blog-2.jpg" alt="">
-                                <a class="blog-overlay text-decoration-none" href="">
-                                    <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita</h5>
-                                    <p class="text-primary m-0">Jan 01, 2050</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-4">
-                            <div class="blog-item position-relative overflow-hidden rounded mb-2">
-                                <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/blog-3.jpg" alt="">
-                                <a class="blog-overlay text-decoration-none" href="">
-                                    <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita</h5>
-                                    <p class="text-primary m-0">Jan 01, 2050</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-4">
-                            <div class="blog-item position-relative overflow-hidden rounded mb-2">
-                                <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/blog-1.jpg" alt="">
-                                <a class="blog-overlay text-decoration-none" href="">
-                                    <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita</h5>
-                                    <p class="text-primary m-0">Jan 01, 2050</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-4">
-                            <div class="blog-item position-relative overflow-hidden rounded mb-2">
-                                <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/blog-2.jpg" alt="">
-                                <a class="blog-overlay text-decoration-none" href="">
-                                    <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita</h5>
-                                    <p class="text-primary m-0">Jan 01, 2050</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-4">
-                            <div class="blog-item position-relative overflow-hidden rounded mb-2">
-                                <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/blog-3.jpg" alt="">
-                                <a class="blog-overlay text-decoration-none" href="">
-                                    <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita</h5>
-                                    <p class="text-primary m-0">Jan 01, 2050</p>
-                                </a>
-                            </div>
-                        </div>
+                        <?php } ?>
+                        
+                        
+                        
+<!--                        
                         <div class="col-12">
                             <nav aria-label="Page navigation">
                                 <ul class="pagination pagination-lg justify-content-center mb-0">
@@ -98,17 +63,18 @@
                                   </li>
                                 </ul>
                               </nav>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
     
                 <div class="col-lg-4 mt-5 mt-lg-0">
                     <!-- Author Bio -->
                     <div class="d-flex flex-column text-center bg-dark rounded mb-5 py-5 px-4">
-                        <img src="<?php echo base_url('public/user/'); ?>img/user.jpg" class="img-fluid rounded-circle mx-auto mb-3" style="width: 100px;">
-                        <h3 class="text-primary mb-3">John Doe</h3>
+                        <img src="<?php echo base_url('public/user/'); ?>img/bpm.jpg" class="img-fluid rounded-circle mx-auto mb-3" style="width: 80px !important; height:70px !important;">
+                        <h3 class="text-primary mb-3">Sema Babayeva
+                            Vidadi Elizade</h3>
                         <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Tag Cloud</h3>
-                        <p class="text-white m-0">Conset elitr erat vero dolor ipsum et diam, eos dolor lorem, ipsum sit no ut est  ipsum erat kasd amet elitr</p>
+                        <p class="text-white m-0">5 nomreli Baki Pese Mektebinin Web Design muellimleri</p>
                     </div>
     
                     <!-- Search Form -->
@@ -133,19 +99,23 @@
                                 <span class="badge badge-primary badge-pill">150</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Web Development</a>
+                                <a href="" class="text-decoration-none h6 m-0">Help Desk</a>
                                 <span class="badge badge-primary badge-pill">131</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Online Marketing</a>
+                                <a href="" class="text-decoration-none h6 m-0">Software Programming</a>
                                 <span class="badge badge-primary badge-pill">78</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Keyword Research</a>
+                                <a href="" class="text-decoration-none h6 m-0">Network Administrator</a>
                                 <span class="badge badge-primary badge-pill">56</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Email Marketing</a>
+                                <a href="" class="text-decoration-none h6 m-0">System Administrator</a>
+                                <span class="badge badge-primary badge-pill">98</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                <a href="" class="text-decoration-none h6 m-0">Graphic design</a>
                                 <span class="badge badge-primary badge-pill">98</span>
                             </li>
                         </ul>
@@ -155,38 +125,46 @@
                     <div class="mb-5">
                         <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h3>
                         <a class="d-flex align-items-center text-decoration-none mb-3" href="">
-                            <img class="img-fluid rounded" src="<?php echo base_url('public/user/'); ?>img/blog-80x80.jpg" alt="">
+                            <img style="width: 80px; height:80px;" class="img-fluid rounded" src="<?php echo base_url('public/user/'); ?>img/blog-80x80.jpg" alt="">
                             <div class="pl-3">
-                                <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                                <small>Jan 01, 2050</small>
+                                <h6 class="m-1"><?php echo $web_design['n_title']; ?></h6>
+                                <small><?php echo  date("d-m-Y", strtotime($web_design['n_date']));?></small>
                             </div>
                         </a>
                         <a class="d-flex align-items-center text-decoration-none mb-3" href="">
-                            <img class="img-fluid rounded" src="<?php echo base_url('public/user/'); ?>img/blog-80x80.jpg" alt="">
+                            <img style="width: 80px; height:80px;" class="img-fluid rounded" src="<?php echo base_url('uploads/news/' . $system_admin['n_file']); ?>" alt="">
                             <div class="pl-3">
-                                <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                                <small>Jan 01, 2050</small>
+                                <h6 class="m-1"><?php echo $system_admin['n_title']; ?></h6>
+                                <small><?php echo  date("d-m-Y", strtotime($system_admin['n_date']));?></small>
                             </div>
                         </a>
                         <a class="d-flex align-items-center text-decoration-none mb-3" href="">
-                            <img class="img-fluid rounded" src="<?php echo base_url('public/user/'); ?>img/blog-80x80.jpg" alt="">
+                            <img  style="width: 80px; height:80px;" class="img-fluid rounded" src="<?php echo base_url('uploads/news/' . $network_admin['n_file']); ?>" alt="">
                             <div class="pl-3">
-                                <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                                <small>Jan 01, 2050</small>
+                                <h6 class="m-1"><?php echo $network_admin['n_title']; ?></h6>
+                               
+                                <small><?php echo  date("d-m-Y", strtotime($network_admin['n_date']));?></small>
+                            </div>
+                        </a>
+                        <a class="d-flex align-items-center text-decoration-none mb-3" href="">
+                            <img style="width: 80px; height:80px;" class="img-fluid rounded" src="<?php echo base_url('uploads/news/' . $help_desk['n_file']); ?>" alt="">
+                            <div class="pl-3">
+                                <h6 class="m-1"><?php echo $help_desk['n_title']; ?></h6>
+                                <small><?php echo  date("d-m-Y", strtotime($help_desk['n_date']));?></small>
                             </div>
                         </a>
                     </div>
     
                     <!-- Tag Cloud -->
                     <div class="mb-5">
-                        <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Tag Cloud</h3>
+                        <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">CATEGORI</h3>
                         <div class="d-flex flex-wrap m-n1">
-                            <a href="" class="btn btn-outline-primary m-1">Design</a>
-                            <a href="" class="btn btn-outline-primary m-1">Development</a>
-                            <a href="" class="btn btn-outline-primary m-1">Marketing</a>
-                            <a href="" class="btn btn-outline-primary m-1">SEO</a>
-                            <a href="" class="btn btn-outline-primary m-1">Writing</a>
-                            <a href="" class="btn btn-outline-primary m-1">Consulting</a>
+
+                        <?php foreach($category as $item) { ?>
+                             <a href="" class="btn btn-outline-primary m-1"><?php echo $item['c_name']; ?></a>
+                        <?php } ?>
+                           
+                           
                         </div>
                     </div>
                 </div>

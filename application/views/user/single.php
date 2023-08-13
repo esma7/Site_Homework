@@ -1,7 +1,6 @@
 <?php $this->load->view('user/includes/headerStyle'); ?>
 <?php $this->load->view('user/includes/header'); ?>
 
-
     <!-- Header Start -->
     <div class="container-fluid page-header" style="margin-bottom: 90px;">
         <div class="container">
@@ -17,29 +16,31 @@
     </div>
     <!-- Header End -->
 
-
+<style>
+    .sekil{
+        width:100px;
+        height:100px;
+        background:transparent;
+        border-radius: 50%;
+        margin-right:5px;
+    }
+</style>
     <!-- Detail Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid ">
         <div class="container py-5">
+                         <h6 class="text-primary mb-3"><?php echo date('d-m-y', strtotime($single_data['n_date'])) ?></h6>
+                        <h1 class="mb-5"><?php echo $single_data['c_name'] ?></h1>
             <div class="row">
                 <div class="col-lg-8">
+                    
                     <div class="mb-5">
-                        <h6 class="text-primary mb-3">Jan 01, 2050</h6>
-                        <h1 class="mb-5">Vero ipsum sea justo dolore eirmod amet dolor tempor lorem</h1>
-                        <img class="img-fluid rounded w-100 mb-4" src="<?php echo base_url('public/user/'); ?>img/carousel-1.jpg" alt="Image">
-                        <p>Sadipscing labore amet rebum est et justo gubergren. Et eirmod ipsum sit diam ut magna lorem.
-                            Nonumy vero labore lorem sanctus rebum et lorem magna kasd, stet amet magna accusam
-                            consetetur eirmod. Kasd accusam sit ipsum sadipscing et at at sanctus et. Ipsum sit
-                            gubergren dolores et, consetetur justo invidunt at et aliquyam ut et vero clita. Diam sea
-                            sea no sed dolores diam nonumy, gubergren sit stet no diam kasd vero.</p>
-                        <p>Voluptua est takimata stet invidunt sed rebum nonumy stet, clita aliquyam dolores vero stet
-                            consetetur elitr takimata rebum sanctus. Sit sed accusam stet sit nonumy kasd diam dolores,
-                            sanctus lorem kasd duo dolor dolor vero sit et. Labore ipsum duo sanctus amet eos et.
-                            Consetetur no sed et aliquyam ipsum justo et, clita lorem sit vero amet amet est dolor
-                            elitr, stet et no diam sit. Dolor erat justo dolore sit invidunt.</p>
-                        <h2 class="mb-4">Est dolor lorem et ea</h2>
-                        <img class="img-fluid rounded w-50 float-left mr-4 mb-3" src="<?php echo base_url('public/user/'); ?>img/blog-1.jpg" alt="Image">
-                        <p>Diam dolor est labore duo invidunt ipsum clita et, sed et lorem voluptua tempor invidunt at
+                        
+                        <img class="img-fluid rounded w-100 mb-4" src="<?php echo base_url('uploads/news/'. $single_data['n_file']); ?>" alt="Image">
+                        <p><?php echo $single_data['n_description']; ?></p>
+                        <p></p>
+                        <!-- <h2 class="mb-4"></h2> -->
+                        <!-- <img class="img-fluid rounded w-50 float-left mr-4 mb-3" src="<?php echo base_url('public/user/'); ?>img/blog-1.jpg" alt="Image"> -->
+                        <!-- <p>Diam dolor est labore duo invidunt ipsum clita et, sed et lorem voluptua tempor invidunt at
                             est sanctus sanctus. Clita dolores sit kasd diam takimata justo diam lorem sed. Magna amet
                             sed rebum eos. Clita no magna no dolor erat diam tempor rebum consetetur, sanctus labore sed
                             nonumy diam lorem amet eirmod. No at tempor sea diam kasd, takimata ea nonumy elitr
@@ -55,11 +56,11 @@
                             est sanctus sanctus. Clita dolores sit kasd diam takimata justo diam lorem sed. Magna amet
                             sed rebum eos. Clita no magna no dolor erat diam tempor rebum consetetur, sanctus labore sed
                             nonumy diam lorem amet eirmod. No at tempor sea diam kasd, takimata ea nonumy elitr
-                            sadipscing gubergren erat.</p>
+                            sadipscing gubergren erat.</p> -->
                     </div>
 
                     <!-- Comment List -->
-                    <div class="mb-5">
+                    <!-- <div class="mb-5">
                         <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">3 Comments</h3>
                         <div class="media mb-4">
                             <img src="<?php echo base_url('public/user/'); ?>img/user.jpg" alt="Image" class="img-fluid rounded-circle mr-3 mt-1"
@@ -95,11 +96,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Comment Form -->
-                    <div class="bg-secondary rounded p-5">
-                        <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Leave a comment</h3>
+                    <div  style="width:610px; height:632px;" class=" p-5">
+                        <!-- <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Leave a comment</h3>
                         <form>
                             <div class="form-group">
                                 <label for="name">Name *</label>
@@ -121,18 +122,24 @@
                             <div class="form-group mb-0">
                                 <input type="submit" value="Leave Comment" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold">
                             </div>
-                        </form>
+                        </form> -->
                     </div>
                 </div>
 
                 <div class="col-lg-4 mt-5 mt-lg-0">
                     <!-- Author Bio -->
                     <div class="d-flex flex-column text-center bg-dark rounded mb-5 py-5 px-4">
-                        <img src="<?php echo base_url('public/user/'); ?>img/user.jpg" class="img-fluid rounded-circle mx-auto mb-3" style="width: 100px;">
-                        <h3 class="text-primary mb-3">John Doe</h3>
+                       <?php if($single_data['a_img']){?>
+                        <img src="<?php echo base_url('uploads/admin/'. $single_data['a_img']); ?>" class="img-fluid rounded-circle mx-auto mb-3" style="width: 100px;">
+                       <?php } else{ ?>
+                        <img  src="https://hivedinn.s3.amazonaws.com/upload/photos/d-avatar.jpg?cache=0" alt class="img-fluid rounded-circle mx-auto mb-3 sekil" />
+                      <?php } ?>
+                      
+
+                      
+                        <h3 class="text-primary mb-3"><?php echo $single_data['a_name']; ?></h3>
                         <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Tag Cloud</h3>
-                        <p class="text-white m-0">Conset elitr erat vero dolor ipsum et diam, eos dolor lorem, ipsum sit
-                            no ut est ipsum erat kasd amet elitr</p>
+                        <p class="text-white m-0">5 nomreli Mədəniyyət və Sənətkarlıq üzrə Bakı Dövlət Peşə Təhsil Mərkəzi Web dizayn müəllimi</p>
                     </div>
 
                     <!-- Search Form -->
@@ -152,26 +159,17 @@
                     <div class="mb-5">
                         <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Categories</h3>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Web Design</a>
-                                <span class="badge badge-primary badge-pill">150</span>
+
+                        <?php foreach($category as $item){?>
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                <a href="" class="text-decoration-none h6 m-0"><?php echo $item['c_name']; ?></a>
+                                <span class="badge badge-primary badge-pill">20</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Web Development</a>
-                                <span class="badge badge-primary badge-pill">131</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Online Marketing</a>
-                                <span class="badge badge-primary badge-pill">78</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Keyword Research</a>
-                                <span class="badge badge-primary badge-pill">56</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Email Marketing</a>
-                                <span class="badge badge-primary badge-pill">98</span>
-                            </li>
+                       <?php } ?>
+                            
+
+                            
+                            
                         </ul>
                     </div>
 
