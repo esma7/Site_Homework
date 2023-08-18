@@ -1,4 +1,7 @@
 <!-- Topbar Start -->
+
+
+
 <div class="container-fluid d-none d-lg-block">
         <div class="row align-items-center py-4 px-xl-5">
             <div class="col-lg-3">
@@ -49,8 +52,15 @@
                 <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 9;">
                     <div class="navbar-nav w-100">
                         <div class="nav-item dropdown">
-                            <a href="" class="nav-item nav-link" >Web Design </a>
-                            <!-- <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
+
+                            <?php foreach($category as $item){ ?>
+                                <a href="<?php echo base_url('course/'.$item['c_id']);?>" class="nav-item nav-link" ><?php echo $item['c_name']; ?></a>     
+                           <?php } ?>
+                           
+                           
+                        </div>
+                       
+                        <!-- <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
                                 <a href="" class="dropdown-item">HTML</a>
                                 <a href="" class="dropdown-item">CSS</a>
                                 <a href="" class="dropdown-item">jQuery</a>
@@ -58,13 +68,6 @@
                                  class="nav-link"
                                  data-toggle="dropdown"
                             </div> -->
-                        </div>
-                        <a href="" class="nav-item nav-link">Help Desk</a>
-                        <a href="" class="nav-item nav-link">Graphic design</a>
-                        <a href="" class="nav-item nav-link">Software Programming</a>
-                        <a href="" class="nav-item nav-link">System Administrator</a>
-                        <a href="" class="nav-item nav-link">Network Administrator</a>
-                       
                     </div>
                 </nav>
             </div>
@@ -79,17 +82,20 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
                             <a href="<?php echo base_url('index'); ?>" class="nav-item nav-link active">Home</a>
+
+
                             <a href="<?php echo base_url('about'); ?>" class="nav-item nav-link">About</a>
-                            <a href="<?php echo base_url('course'); ?>" class="nav-item nav-link">Courses</a>
-                            <a href="<?php echo base_url('category'); ?>" class="nav-item nav-link">Category</a>
-                            <a href="<?php echo base_url('teacher') ?>" class="nav-item nav-link">Teachers</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
+                            <!-- <a href="<?php echo base_url('course'); ?>" class="nav-item nav-link">Courses</a> -->
+                           
+                            <!-- <a href="<?php echo base_url('teacher') ?>" class="nav-item nav-link">Teachers</a> -->
+                            <a href="<?php echo base_url('blog') ?>" class="nav-item nav-link">All List</a>
+                            <!-- <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">All List</a>
                                 <div class="dropdown-menu rounded-0 m-0">
                                     <a href="<?php echo base_url('blog'); ?>" class="dropdown-item">Blog List</a>
                                     <a href="<?php echo base_url('single'); ?>" class="dropdown-item">Blog Detail</a>
                                 </div>
-                            </div>
+                            </div> -->
                             <a href="<?php echo base_url('contact'); ?>" class="nav-item nav-link">Contact</a>
                         </div>
                         <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="<?php echo base_url('contact'); ?>">Join</a>

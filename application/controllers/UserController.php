@@ -6,7 +6,7 @@ class UserController extends CI_Controller{
         // echo "index metodu";
         $data['slider_left_side'] = $this->db
         ->limit(3)
-        ->order_by('n_id','DESC')
+        ->order_by('n_date','DESC')
         ->join('category','category.c_id = news.n_category','left')
         ->join('admin','admin.a_id = news.n_creator_id','left')
         ->get('news')
@@ -18,7 +18,8 @@ class UserController extends CI_Controller{
 
         $data['slider_bottom_side'] = $this->db
         ->limit(6,6)
-        ->order_by('n_id','DESC')
+        ->order_by('n_date','DESC')
+        ->where('n_status','1')
         ->join('category','category.c_id = news.n_category','left')
         ->join('admin','admin.a_id = news.n_creator_id','left')
         ->get('news')
@@ -26,36 +27,44 @@ class UserController extends CI_Controller{
 
         $data['web_design'] = $this->db
         ->where('n_category','1')
-        ->order_by('n_id','DESC')
+        ->order_by('n_date','DESC')
         ->join('category','category.c_id = news.n_category','left')
         ->get('news')
         ->row_array(); 
 
         $data['system_admin'] = $this->db
         ->where('n_category','6')
-        ->order_by('n_id','DESC')
+        ->order_by('n_date','DESC')
         ->join('category','category.c_id = news.n_category','left')
         ->get('news')
         ->row_array(); 
 
         $data['network_admin'] = $this->db
         ->where('n_category','5')
-        ->order_by('n_id','DESC')
+        ->order_by('n_date','DESC')
         ->join('category','category.c_id = news.n_category','left')
         ->get('news')
         ->row_array(); 
         $data['graphic_design'] = $this->db
         ->where('n_category','3')
-        ->order_by('n_id','DESC')
+        ->order_by('n_date','DESC')
         ->join('category','category.c_id = news.n_category','left')
         ->get('news')
         ->row_array(); 
         $data['help_desk'] = $this->db
         ->where('n_category','2')
-        ->order_by('n_id','DESC')
+        ->order_by('n_date','DESC')
         ->join('category','category.c_id = news.n_category','left')
         ->get('news')
         ->row_array(); 
+
+        $data['limit_5news']=$this->db
+        ->limit(5)
+        ->order_by('n_date','DESC')
+        
+        ->join('category', 'category.c_id = news.n_category','left')
+        ->get('news')
+        ->result_array();
 
 
         $data['category'] =$this->db->get('category')->result_array();
@@ -81,49 +90,22 @@ class UserController extends CI_Controller{
     }
      
     public function blog(){
-        $data['slider_left_side'] = $this->db
-        ->limit(6)
-        ->order_by('n_id','DESC')
+       // echo "index metodu";
+       $data['slider_left_side'] = $this->db
+       ->where('n_status', '1')
+        ->order_by('n_date','DESC')
         ->join('category','category.c_id = news.n_category','left')
+        ->join('admin','admin.a_id = news.n_creator_id','left')
         ->get('news')
         ->result_array(); 
+      
 
-        $data['web_design'] = $this->db
-        ->where('n_category','1')
-        ->limit(1,1)
-        ->order_by('n_id','DESC')
-        ->join('category','category.c_id = news.n_category','left')
+        $data['limit_5news']=$this->db
+        ->limit(5)
+        ->order_by('n_date','DESC')
+        ->join('category', 'category.c_id = news.n_category','left')
         ->get('news')
-        ->row_array(); 
-        $data['system_admin'] = $this->db
-        ->where('n_category','6')
-        ->limit(1,1)
-        ->order_by('n_id','DESC')
-        ->join('category','category.c_id = news.n_category','left')
-        ->get('news')
-        ->row_array(); 
-
-        $data['network_admin'] = $this->db
-        ->where('n_category','5')
-        ->limit(1,1)
-        ->order_by('n_id','DESC')
-        ->join('category','category.c_id = news.n_category','left')
-        ->get('news')
-        ->row_array(); 
-        $data['graphic_design'] = $this->db
-        ->where('n_category','3')
-        ->limit(1,1)
-        ->order_by('n_id','DESC')
-        ->join('category','category.c_id = news.n_category','left')
-        ->get('news')
-        ->row_array(); 
-        $data['help_desk'] = $this->db
-        ->where('n_category','2')
-        ->limit(1,1)
-        ->order_by('n_id','DESC')
-        ->join('category','category.c_id = news.n_category','left')
-        ->get('news')
-        ->row_array(); 
+        ->result_array();
 
         $data['category'] =$this->db->get('category')->result_array();
 
@@ -136,17 +118,55 @@ class UserController extends CI_Controller{
     }
 
 
-    public function course(){
-        $this->load->view('user/course');
+    public function course($id){
+
+        $data['category_of']=$this->db
+        ->where('n_category', $id)
+        ->order_by('n_date','DESC')
+        ->join('category','category.c_id = news.n_category','left')
+        ->get('news')
+        ->result_array();
+      
+        $data['limit_5news']=$this->db
+        ->limit(5)
+        ->order_by('n_date','DESC')
+        
+        ->join('category', 'category.c_id = news.n_category','left')
+        ->get('news')
+        ->result_array();
+        
+       
+       
+       
+       
+
+        $data['category'] =$this->db->where('c_id', $id)->get('category')->row_array();
+
+        $data['courses'] =$this->db->get('category')->result_array();
+       
+        
+ 
+
+
+        $this->load->view('user/course', $data);
     }
 
     public function single($id){
+        $id = $this->security->xss_clean($id);
         // echo $id;
         $data['single_data'] = $this-> db
         ->where('n_id',$id)
         ->join('category', 'category.c_id = news.n_category','left')
         ->join('admin','admin.a_id = news.n_creator_id','left')
         ->get("news")->row_array();
+
+        $data['limit_5news']=$this->db
+        ->limit(5)
+        ->order_by('n_date','DESC')
+        
+        ->join('category', 'category.c_id = news.n_category','left')
+        ->get('news')
+        ->result_array();
         
         $data['category'] = $this->db->get('category')->result_array();
 
@@ -157,7 +177,7 @@ class UserController extends CI_Controller{
         if($data['single_data']){
             $this->load->view('user/single',$data);
         }else{
-            redirect(basename('index'));
+            redirect(base_url('index'));
         }
        
 
@@ -166,7 +186,23 @@ class UserController extends CI_Controller{
     public function teacher(){
         $this->load->view('user/teacher');
     }
-    
+    public function category($id){
+        $data['category_of']=$this->db
+        ->where('n_category', $id)
+        ->order_by('n_date','DESC')
+        ->join('category','category.c_id = news.n_category','left')
+        ->get('news')
+        ->result_array();
+
+         print_r('<pre>');
+         print_r($data['category_of']);       
+        die();
+
+        
+
+
+        $this->load->view('user/category',$data);
+    }
 
 
 

@@ -1,3 +1,6 @@
+<?php $category =$this->db->get('category')->result_array(); ?>
+
+
 <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
     <div class="row pt-5">
         <div class="col-lg-7 col-md-12">
@@ -17,12 +20,10 @@
                 <div class="col-md-6 mb-5">
                     <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Our Courses</h5>
                     <div class="d-flex flex-column justify-content-start">
-                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Web Design</a>
-                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Help Desk</a>
-                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Graphic Design</a>
-                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>System Administrator</a>
-                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Network Administrator</a>
-                        <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Software Programming</a>
+                    <?php foreach($category as $item){?>
+                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i><?php echo $item['c_name']; ?></a>
+                           <?php } ?>
+                       
                     </div>
                 </div>
             </div>
@@ -33,7 +34,7 @@
 
             <form action="<?php echo base_url('message'); ?>" method="post">
                 <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Newsletter</h5>
-                <p>Saytda qeydiyyatdan keçməyə tələsin</p>
+                <p>Ən son yeniliklərdən xeberdar olun</p>
                 <div class="w-100">
                     <div style="height:67px !important; " class="input-group">
                         <input name="email" type="text" class="form-control border-light" style="padding: 30px; border-radius:10px; float:left; " placeholder="Your Email Address" >

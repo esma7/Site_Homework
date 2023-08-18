@@ -39,9 +39,9 @@
                             <tr>
                             <td><?php echo $sira; ?></td>
                             <td>
-                              <i class="fab fa-angular fa-lg text-danger me-1"></i> <strong><?php echo $items->n_title; ?></strong>
+                              <i class="fab fa-angular fa-lg text-danger me-1"></i> <strong><?php echo $items->n_title_az; ?></strong>
                             </td>
-                            <td><?php echo $items->n_description; ?></td>
+                            <td><?php echo $items->n_description_az; ?></td>
                             <td><?php echo $items->c_name; ?></td>
                             <td>
                             <?php echo date("d-m-Y H:i", strtotime($items->n_date)); ?>

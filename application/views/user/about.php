@@ -21,16 +21,16 @@
     <!-- About Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
-            <div class="row align-items-center">
+            <div class="row align-items-center" >
                 <div class="col-lg-5">
-                    <img class="img-fluid rounded mb-4 mb-lg-0" src="<?php echo base_url('public/user/'); ?>img/about.jpg" alt="">
+                    <img style="height:360px !important;"  class="img-fluid rounded mb-4 mb-lg-0" src="<?php echo base_url('uploads/news/'); ?>statistika.jpg" alt="">
                 </div>
                 <div class="col-lg-7">
                     <div class="text-left mb-4">
-                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
-                        <h1>Innovative Way To Learn</h1>
+                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Haqqımızda</h5>
+                        <h1>Azərbaycan Respublikası Elm və Təhsil Nazirliyi yanında Peşə Təhsili üzrə Dövlət Agentliyi</h1>
                     </div>
-                    <p>Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo dolores et sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus gubergren sit rebum clita amet, sea est sea vero sed et. Sadipscing labore tempor at sit dolor clita consetetur diam. Diam ut diam tempor no et, lorem dolore invidunt no nonumy stet ea labore, dolor justo et sit gubergren diam sed sed no ipsum. Sit tempor ut nonumy elitr dolores justo aliquyam ipsum stet</p>
+                    <p>Peşə təhsili sahəsində dövlət siyasətinin həyata keçirilməsini təmin edən və əlaqələndirən, Azərbaycan Respublikası Elm və Təhsil Nazirliyinin tabeliyindəki peşə təhsili müəssisələrinin fəaliyyətini təşkil edən icra hakimiyyəti orqanıdırPeşə təhsili sahəsində peşə hazırlığının səmərəliliyini artırmaq və rəqabətqabiliyyətli ixtisaslı kadrların hazırlanmasını təmin etmək məqsədi ilə Azərbaycan Respublikası Prezidentinin 2016-cı il 20 aprel tarixli 869 nömrəli Fərmanı ilə yaradılmışdır</p>
                     <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                 </div>
             </div>
@@ -91,36 +91,36 @@
     <!-- Registration End -->
 
 
-    <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
+     <!-- Testimonial Start -->
+     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mb-5">
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Testimonial</h5>
-                <h1>What Say Our Students</h1>
+                <h1>Məzunlarımız</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="owl-carousel testimonial-carousel">
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="<?php echo base_url('public/user/'); ?>img/testimonial-1.jpg" alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
+                            <h4 class="font-weight-normal mb-4">"3 il yüksək texniki peşə təhsili almaq mənə mane olmur, əksinə avantajdır. Bu, bizə daha yaxşı öyrənmək, maraqlandığımız sahə üzrə dərin biliyə sahib olmaq imkanı verir.  Tələbə yoldaşlarım arasında əvvəlki illərdə peşə təhsili alan, ancaq universitetə müsabiqədənkənar qəbul imkanı verən yüksək texniki peşə təhsilinə yenidən üz tutanlar da çoxdur”.</h4>
+                            <img class="img-fluid mx-auto mb-3" src="<?php echo base_url('uploads/news/'); ?>sevinc.jpg" alt="">
+                            <h5 class="m-0">Sevinc Abdullayeva</h5>
+                            <span>Sənaye və İnnovasiyalar üzrə Bakı Dövlət Peşə Təhsil Mərkəzində Yüksək texniki peşə üzrə Qrafik dizayn tələbəsi</span>
                         </div>
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="<?php echo base_url('public/user/'); ?>img/testimonial-2.jpg" alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
+                            <h4 class="font-weight-normal mb-4">“İstəyirdim əlimdə bir peşəm olsun. Avtomobillərə xüsusi marağım olduğunu nəzərə alaraq bu ixtisaslarla maraqlandım. Təhsil aldığım müəssisənin bu arzumu gerçəkləşdirmək üçün ən yaxşısı olduğunu öyrəndim.Burda təhsilimizin 70 faizi təcrübədir.Mənim üçün çox maraqlı olan bir işi öyrənirəm. Üstəlik, buradakı təhsilimi tamamladıqdan sonra texniki universitetlərin birində təhsil almaq imkanım var. Bu da o deməkdir ki, burdakı təhsilimi tamamladıqdan sonra rahatca iş də tapa bilərəm, universitetdə təhsilimi davam etdirə də”</h4>
+                            <img class="img-fluid mx-auto mb-3" src="<?php echo base_url('uploads/news/'); ?>abis.jpg" alt="">
+                            <h5 class="m-0">Abış Abışov</h5>
+                            <span>Sənaye və İnnovasiyalar üzrə Bakı Dövlət Peşə Təhsil Mərkəzinin Nəqliyyat vasitələrinin texniki istismarı ixtisası üzrə tələbəsi</span>
                         </div>
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-normal mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="<?php echo base_url('public/user/'); ?>img/testimonial-3.jpg" alt="">
-                            <h5 class="m-0">Client Name</h5>
-                            <span>Profession</span>
+                            <h4 class="font-weight-normal mb-4">Mədəniyyət və Sənətkarlıq üzrə Bakı Dövlət Peşə Təhsil Mərkəzi</h4>
+                            <img class="img-fluid mx-auto mb-3" src="<?php echo base_url('uploads/news/'); ?>5nomre.jpg" alt="">
+                            <h5 class="m-0">5 nömrəli Bakı Peşə Məktəbi</h5>
+                            <span>13 nömrəli Bakı Peşə Məktəbi/15 nömrəli Bakı Peşə Liseyi</span>
                         </div>
                     </div>
                 </div>

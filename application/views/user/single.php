@@ -1,6 +1,8 @@
 <?php $this->load->view('user/includes/headerStyle'); ?>
 <?php $this->load->view('user/includes/header'); ?>
 
+
+
     <!-- Header Start -->
     <div class="container-fluid page-header" style="margin-bottom: 90px;">
         <div class="container">
@@ -30,12 +32,14 @@
         <div class="container py-5">
                          <h6 class="text-primary mb-3"><?php echo date('d-m-y', strtotime($single_data['n_date'])) ?></h6>
                         <h1 class="mb-5"><?php echo $single_data['c_name'] ?></h1>
+                       
             <div class="row">
                 <div class="col-lg-8">
                     
                     <div class="mb-5">
                         
                         <img class="img-fluid rounded w-100 mb-4" src="<?php echo base_url('uploads/news/'. $single_data['n_file']); ?>" alt="Image">
+                        <h4 class="mb-5"><?php echo $single_data['n_title'] ?></h4>
                         <p><?php echo $single_data['n_description']; ?></p>
                         <p></p>
                         <!-- <h2 class="mb-4"></h2> -->
@@ -99,7 +103,7 @@
                     </div> -->
 
                     <!-- Comment Form -->
-                    <div  style="width:610px; height:632px;" class=" p-5">
+                    <div  class=" p-5">
                         <!-- <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Leave a comment</h3>
                         <form>
                             <div class="form-group">
@@ -142,6 +146,7 @@
                         <p class="text-white m-0">5 nomreli Mədəniyyət və Sənətkarlıq üzrə Bakı Dövlət Peşə Təhsil Mərkəzi Web dizayn müəllimi</p>
                     </div>
 
+
                     <!-- Search Form -->
                     <div class="mb-5">
                         <form action="">
@@ -156,7 +161,7 @@
                     </div>
 
                     <!-- Category List -->
-                    <div class="mb-5">
+                    <!-- <div class="mb-5">
                         <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Categories</h3>
                         <ul class="list-group list-group-flush">
 
@@ -171,44 +176,35 @@
                             
                             
                         </ul>
-                    </div>
+                    </div> -->
 
                     <!-- Recent Post -->
                     <div class="mb-5">
                         <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h3>
-                        <a class="d-flex align-items-center text-decoration-none mb-3" href="">
-                            <img class="img-fluid rounded" src="<?php echo base_url('public/user/'); ?>img/blog-80x80.jpg" alt="">
+                        <?php foreach($limit_5news as $item){?>
+                            <a class="d-flex align-items-center text-decoration-none mb-3" href="<?php echo base_url('single/'. $item['c_id']); ?>">
+                            <img style="height:100px !important; width:130px !important;" class="img-fluid rounded" src="<?php echo base_url('uploads/news/'. $item['n_file']); ?>" alt="">
                             <div class="pl-3">
-                                <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                                <small>Jan 01, 2050</small>
+                                
+                                <h6 class="m-1"><?php echo $item['n_title']; ?></h6>
+                                <small><?php echo  date("d.m.Y", strtotime($item['n_date'])); ?></small>
                             </div>
                         </a>
-                        <a class="d-flex align-items-center text-decoration-none mb-3" href="">
-                            <img class="img-fluid rounded" src="<?php echo base_url('public/user/'); ?>img/blog-80x80.jpg" alt="">
-                            <div class="pl-3">
-                                <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                                <small>Jan 01, 2050</small>
-                            </div>
-                        </a>
-                        <a class="d-flex align-items-center text-decoration-none mb-3" href="">
-                            <img class="img-fluid rounded" src="<?php echo base_url('public/user/'); ?>img/blog-80x80.jpg" alt="">
-                            <div class="pl-3">
-                                <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                                <small>Jan 01, 2050</small>
-                            </div>
-                        </a>
+                      <?php  } ?>
+                        
+                       
+                       
                     </div>
 
                     <!-- Tag Cloud -->
                     <div class="mb-5">
                         <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Tag Cloud</h3>
                         <div class="d-flex flex-wrap m-n1">
-                            <a href="" class="btn btn-outline-primary m-1">Design</a>
-                            <a href="" class="btn btn-outline-primary m-1">Development</a>
-                            <a href="" class="btn btn-outline-primary m-1">Marketing</a>
-                            <a href="" class="btn btn-outline-primary m-1">SEO</a>
-                            <a href="" class="btn btn-outline-primary m-1">Writing</a>
-                            <a href="" class="btn btn-outline-primary m-1">Consulting</a>
+                            <?php foreach($category as $item){?>
+                                <a href="<?php echo base_url('course/'. $item['c_id']); ?>" class="btn btn-outline-primary m-1"><?php echo $item['c_name']; ?></a>
+                           <?php } ?>
+                            
+                            
                         </div>
                     </div>
                 </div>
