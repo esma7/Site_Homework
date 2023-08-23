@@ -47,9 +47,9 @@
                 <div class="carousel-caption d-flex align-items-center justify-content-center">
                     <div class="p-5" style="width: 100%; max-width: 900px;">
                         <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                        <h1 class="display-3 text-white mb-md-4"><?php echo $web_design['n_title']; ?></h1>
-                        <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2"><?php echo $web_design['c_name']; ?></a>
-                        <span style="background:transparent; border:none;" class=" btn btn-info text-primary py-md-2 px-md-4 mt-2 ">Jan 01, 2050</span>
+                        <h1 class="display-3 text-white mb-md-4"><?php echo $web_design['n_title_'. $this->session->userdata('site_lang')]; ?></h1>
+                        <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2"><?php echo $web_design['c_name_'. $this->session->userdata('site_lang')]; ?></a>
+                        <span style="background:transparent; border:none;" class=" btn btn-info text-primary py-md-2 px-md-4 mt-2 "><?php echo  date("d.m.Y", strtotime($web_design['n_date'])); ?></span>
                     </div>
                 </div>
             </div>
@@ -58,9 +58,9 @@
                 <div class="carousel-caption d-flex align-items-center justify-content-center">
                     <div class="p-5" style="width: 100%; max-width: 900px;">
                         <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                        <h1 class="display-3 text-white mb-md-4"><?php echo $system_admin['n_title']; ?></h1>
-                        <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2"><?php echo $system_admin['c_name']; ?></a>
-                        <span style="background:transparent; border:none;" class=" btn btn-info text-primary py-md-2 px-md-4 mt-2 ">Jan 01, 2050</span>
+                        <h1 class="display-3 text-white mb-md-4"><?php echo $system_admin['n_title_'. $this->session->userdata('site_lang')]; ?></h1>
+                        <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2"><?php echo $system_admin['c_name_'. $this->session->userdata('site_lang')]; ?></a>
+                        <span style="background:transparent; border:none;" class=" btn btn-info text-primary py-md-2 px-md-4 mt-2 "><?php echo  date("d.m.Y", strtotime($system_admin['n_date'])); ?></span>
                     </div>
                 </div>
             </div>
@@ -69,9 +69,9 @@
                 <div class="carousel-caption d-flex align-items-center justify-content-center">
                     <div class="p-5" style="width: 100%; max-width: 900px;">
                         <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                        <h1 class="display-3 text-white mb-md-4"><?php echo $network_admin['n_title']; ?></h1>
-                        <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2"><?php echo $network_admin['c_name']; ?></a>
-                        <span style="background:transparent; border:none;" class=" btn btn-info text-primary py-md-2 px-md-4 mt-2 ">Jan 01, 2050</span>
+                        <h1 class="display-3 text-white mb-md-4"><?php echo $network_admin['n_title_'. $this->session->userdata('site_lang')]; ?></h1>
+                        <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2"><?php echo $network_admin['c_name_'. $this->session->userdata('site_lang')]; ?></a>
+                        <span style="background:transparent; border:none;" class=" btn btn-info text-primary py-md-2 px-md-4 mt-2 "><?php echo  date("d.m.Y", strtotime($help_desk['n_date'])); ?>0</span>
                     </div>
                 </div>
             </div>
@@ -141,19 +141,19 @@
                                 <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
                             </div>
 
-                            <?php if (strlen($item['n_title']) > 30) { ?>
+                            <?php if (strlen($item['n_title_'. $this->session->userdata('site_lang')]) > 30) { ?>
 
-                                <a class="h6  mb-3 text-info text-uppercase font-weight-bold" href="<?php echo base_url('single/' . $item['n_id']); ?>"><?php echo mb_substr(($item['n_title']), 0, 20, 'UTF-8') . '...'; ?></a>
+                                <a class="h6  mb-3 text-info text-uppercase font-weight-bold" href="<?php echo base_url('single/' . $item['n_id']); ?>"><?php echo mb_substr(($item['n_title_'. $this->session->userdata('site_lang')]), 0, 20, 'UTF-8') . '...'; ?></a>
 
                             <?php } else { ?>
 
-                                <a class="h6  mb-3 text-info text-uppercase font-weight-bold" href="<?php echo base_url('single/' . $item['n_id']); ?>"><?php echo $item['n_title']; ?></a>
+                                <a class="h6  mb-3 text-info text-uppercase font-weight-bold" href="<?php echo base_url('single/' . $item['n_id']); ?>"><?php echo $item['n_title_'. $this->session->userdata('site_lang')]; ?></a>
 
                             <?php } ?>
 
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-circle text-primary mr-2" aria-hidden="true"></i> <?php echo $item['c_name']; ?></h6>
+                                    <h6 class="m-0"><i class="fa fa-circle text-primary mr-2" aria-hidden="true"></i> <?php echo $item['c_name_'. $this->session->userdata('site_lang')]; ?></h6>
                                     <h5 class="m-0">$99</h5>
                                 </div>
                             </div>
@@ -185,7 +185,7 @@
                     <div class="cat-item position-relative overflow-hidden rounded mb-2">
                         <img class="img-fluid" src="<?php echo base_url('public/user/'); ?>img/cat-1.jpg" alt="">
                         <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 style="color:orange !important;" class="text-white font-weight-medium"><?php echo $item['c_name']; ?></h4>
+                            <h4 style="color:orange !important;" class="text-white font-weight-medium"><?php echo $item['c_name_'. $this->session->userdata('site_lang')]; ?></h4>
                             <span>100 Courses</span>
                         </a>
                     </div>
@@ -386,7 +386,7 @@
                 <div class="blog-item position-relative overflow-hidden rounded mb-2">
                     <img style="height:300px;" class="img-fluid" src="<?php echo base_url('uploads/news/' . $web_design['n_file']); ?>" alt="">
                     <a class="blog-overlay text-decoration-none" href="">
-                        <h5 class="text-white mb-3"><?php echo $web_design['n_title'];  ?></h5>
+                        <h5 class="text-white mb-3"><?php echo $web_design['n_title_'. $this->session->userdata('site_lang')];  ?></h5>
                         <p class="text-primary m-0"><?php echo  date("d.m.Y", strtotime($web_design['n_date']));  ?></p>
                     </a>
                 </div>
@@ -395,7 +395,7 @@
                 <div class="blog-item position-relative overflow-hidden rounded mb-2">
                     <img style="height:300px;" class="img-fluid" src="<?php echo base_url('uploads/news/' . $system_admin['n_file']); ?>" alt="">
                     <a class="blog-overlay text-decoration-none" href="">
-                        <h5 class="text-white mb-3"><?php echo $system_admin['n_title'];  ?></h5>
+                        <h5 class="text-white mb-3"><?php echo $system_admin['n_title_'. $this->session->userdata('site_lang')];  ?></h5>
                         <p class="text-primary m-0"><?php echo  date("d.m.Y", strtotime($system_admin['n_date'])); ?></p>
                     </a>
                 </div>
@@ -404,7 +404,7 @@
                 <div class="blog-item position-relative overflow-hidden rounded mb-2">
                     <img style="height:300px;" class="img-fluid" src="<?php echo base_url('uploads/news/' . $network_admin['n_file']); ?>" alt="">
                     <a class="blog-overlay text-decoration-none" href="">
-                        <h5 class="text-white mb-3"><?php echo $network_admin['n_title'];  ?></h5>
+                        <h5 class="text-white mb-3"><?php echo $network_admin['n_title_'. $this->session->userdata('site_lang')];  ?></h5>
                         <p class="text-primary m-0"><?php echo  date("d.m.Y", strtotime($network_admin['n_date'])); ?></p>
                     </a>
                 </div>

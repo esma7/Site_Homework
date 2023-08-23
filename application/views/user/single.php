@@ -31,7 +31,7 @@
     <div class="container-fluid ">
         <div class="container py-5">
                          <h6 class="text-primary mb-3"><?php echo date('d-m-y', strtotime($single_data['n_date'])) ?></h6>
-                        <h1 class="mb-5"><?php echo $single_data['c_name'] ?></h1>
+                        <h1 class="mb-5"><?php echo $single_data['c_name_'.$this->session->userdata('site_lang')] ?></h1>
                        
             <div class="row">
                 <div class="col-lg-8">
@@ -39,8 +39,8 @@
                     <div class="mb-5">
                         
                         <img class="img-fluid rounded w-100 mb-4" src="<?php echo base_url('uploads/news/'. $single_data['n_file']); ?>" alt="Image">
-                        <h4 class="mb-5"><?php echo $single_data['n_title'] ?></h4>
-                        <p><?php echo $single_data['n_description']; ?></p>
+                        <h4 class="mb-5"><?php echo $single_data['n_title_'.$this->session->userdata('site_lang')] ?></h4>
+                        <p><?php echo $single_data['n_description_'.$this->session->userdata('site_lang')]; ?></p>
                         <p></p>
                         <!-- <h2 class="mb-4"></h2> -->
                         <!-- <img class="img-fluid rounded w-50 float-left mr-4 mb-3" src="<?php echo base_url('public/user/'); ?>img/blog-1.jpg" alt="Image"> -->
@@ -167,7 +167,7 @@
 
                         <?php foreach($category as $item){?>
                                 <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0"><?php echo $item['c_name']; ?></a>
+                                <a href="" class="text-decoration-none h6 m-0"><?php echo $item['c_name_az']; ?></a>
                                 <span class="badge badge-primary badge-pill">20</span>
                             </li>
                        <?php } ?>
@@ -186,7 +186,7 @@
                             <img style="height:100px !important; width:130px !important;" class="img-fluid rounded" src="<?php echo base_url('uploads/news/'. $item['n_file']); ?>" alt="">
                             <div class="pl-3">
                                 
-                                <h6 class="m-1"><?php echo $item['n_title']; ?></h6>
+                                <h6 class="m-1"><?php echo $item['n_title_'. $this->session->userdata('site_lang')]; ?></h6>
                                 <small><?php echo  date("d.m.Y", strtotime($item['n_date'])); ?></small>
                             </div>
                         </a>
@@ -201,7 +201,7 @@
                         <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Tag Cloud</h3>
                         <div class="d-flex flex-wrap m-n1">
                             <?php foreach($category as $item){?>
-                                <a href="<?php echo base_url('course/'. $item['c_id']); ?>" class="btn btn-outline-primary m-1"><?php echo $item['c_name']; ?></a>
+                                <a href="<?php echo base_url('course/'. $item['c_id']); ?>" class="btn btn-outline-primary m-1"><?php echo $item['c_name_'.$this->session->userdata('site_lang')]; ?></a>
                            <?php } ?>
                             
                             

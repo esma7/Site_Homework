@@ -29,7 +29,7 @@
                             <div class="blog-item position-relative overflow-hidden rounded mb-2">
                                 <img style="height:200px !important;" class="img-fluid" src="<?php echo base_url('uploads/news/'. $left_slide['n_file']); ?>" alt="">
                                 <a class="blog-overlay text-decoration-none" href="">
-                                    <h5 class="text-white mb-3"><?php echo $left_slide['n_title']; ?></h5>
+                                    <h5 class="text-white mb-3"><?php echo $left_slide['n_title_'. $this->session->userdata('site_lang')]; ?></h5>
 
 
                                     <p class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href=""><?php echo $left_slide['c_name']; ?></p>
@@ -93,7 +93,7 @@
                     <div class="d-flex flex-wrap m-n1">
 
                         <?php foreach ($category as $item) { ?>
-                            <a href="" class="btn btn-outline-primary m-1"><?php echo $item['c_name']; ?></a>
+                            <a href="" class="btn btn-outline-primary m-1"><?php echo $item['c_name_'.$this->session->userdata('site_lang')]; ?></a>
                         <?php } ?>
 
 
@@ -137,7 +137,7 @@
                             <a class="d-flex align-items-center text-decoration-none mb-3" href="">
                             <img style="height:100px !important; width:130px !important;" class="img-fluid rounded" src="<?php echo base_url('uploads/news/'. $item['n_file']); ?>" alt="">
                             <div class="pl-3">
-                                <h6 class="m-1"><?php echo $item['n_title']; ?></h6>
+                                <h6 class="m-1"><?php echo $item['n_title_az']; ?></h6>
                                 <small><?php echo  date("d.m.Y", strtotime($item['n_date'])); ?></small>
                             </div>
                         </a>

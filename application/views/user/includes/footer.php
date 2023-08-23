@@ -21,7 +21,7 @@
                     <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Our Courses</h5>
                     <div class="d-flex flex-column justify-content-start">
                     <?php foreach($category as $item){?>
-                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i><?php echo $item['c_name']; ?></a>
+                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i><?php echo $item['c_name_'.$this->session->userdata('site_lang')]; ?></a>
                            <?php } ?>
                        
                     </div>
@@ -64,7 +64,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+<!-- <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
     <div class="row">
         <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
             <p class="m-0 text-white">&copy; <a href="#">Domain Name</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com">HTML Codex</a>
@@ -87,4 +87,4 @@
             </ul>
         </div>
     </div>
-</div>
+</div> -->

@@ -212,13 +212,21 @@ class AdminController extends CI_Controller
     public function update_newsAct($id)
     {
         $id = $this->security->xss_clean($id);
-        $title = $_POST['title'];
-        $descr = $_POST['description'];
+
+        $title_az = $_POST['title_az'];
+        $descr_az= $_POST['description_az'];
+
+        $title_en = $_POST['title_en'];
+        $descr_en = $_POST['description_en'];
+
+        $title_ru = $_POST['title_ru'];
+        $descr_ru = $_POST['description_ru'];
+        
         $date = $_POST['date'];
         $category = $_POST['category'];
         $status = $_POST['status'];
 
-        if (!empty($title) && !empty($descr) && !empty($date) && !empty($category) && !empty($status)) {
+        if (!empty($title_az) && !empty($descr_az) && !empty($date) && !empty($category) && !empty($status)) {
             $config['upload_path'] = './uploads/';
             $config['allowed_types'] = 'gif|jpg|png|mp3|jpeg';
             $config['remove_spaces'] = true;
@@ -233,8 +241,15 @@ class AdminController extends CI_Controller
                 $upload_name = $this->upload->data('file_name');
                 $upload_ext = $this->upload->data('file_ext');
                 $data = [
-                    'n_title'        => $title,
-                    'n_description'  => $descr,
+                    'n_title_az'        => $title_az,
+                    'n_title_en'        => $title_en,
+                    'n_title_ru'        => $title_ru,
+
+
+                    'n_description_az'  => $descr_az,                  
+                    'n_description_en'  => $descr_en,
+                    'n_description_ru'  => $descr_ru,
+
                     'n_date'         => $date,
                     'n_category'     => $category,
                     'n_status'       => $status,
@@ -252,8 +267,14 @@ class AdminController extends CI_Controller
                 redirect(base_url('a_news_list'));
             } else {
                 $data = [
-                    'n_title'        => $title,
-                    'n_description'  => $descr,
+                   'n_title_az'        => $title_az,
+                    'n_title_en'        => $title_en,
+                    'n_title_ru'        => $title_ru,
+
+
+                    'n_description_az'  => $descr_az,                  
+                    'n_description_en'  => $descr_en,
+                    'n_description_ru'  => $descr_ru,
                     'n_date'         => $date,
                     'n_category'     => $category,
                     'n_status'       => $status,

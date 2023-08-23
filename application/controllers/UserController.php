@@ -2,7 +2,14 @@
 
 class UserController extends CI_Controller{
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->lang->load('message','az');
+    }
+
     public function  index(){
+      
         // echo "index metodu";
         $data['slider_left_side'] = $this->db
         ->limit(3)
@@ -122,6 +129,7 @@ class UserController extends CI_Controller{
 
         $data['category_of']=$this->db
         ->where('n_category', $id)
+        ->limit(6)
         ->order_by('n_date','DESC')
         ->join('category','category.c_id = news.n_category','left')
         ->get('news')
