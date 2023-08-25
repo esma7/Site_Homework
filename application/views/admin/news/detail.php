@@ -24,7 +24,7 @@
                                         }
                                     </style>
                                 
-
+                                      
                                     <table class="table table-bordered">
                                         <tbody>
                                             <tr>
@@ -46,7 +46,7 @@
                                             </tr>
                                             <tr>
                                                 <td>Category</td>
-                                                <td><?php echo $single_news['c_name']; ?></td>
+                                                <td><?php echo $single_news['c_name_az']; ?></td>
 
                                             </tr>
                                             <tr>

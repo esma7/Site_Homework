@@ -18,13 +18,13 @@
                     </div>
                 </div>
                 <div class="col-md-6 mb-5">
-                    <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Our Courses</h5>
-                    <div class="d-flex flex-column justify-content-start">
+                    <!-- <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Our Courses</h5> -->
+                    <!-- <div class="d-flex flex-column justify-content-start">
                     <?php foreach($category as $item){?>
                         <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i><?php echo $item['c_name_'.$this->session->userdata('site_lang')]; ?></a>
                            <?php } ?>
                        
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

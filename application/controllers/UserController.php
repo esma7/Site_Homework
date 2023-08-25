@@ -52,12 +52,14 @@ class UserController extends CI_Controller{
         ->join('category','category.c_id = news.n_category','left')
         ->get('news')
         ->row_array(); 
+
         $data['graphic_design'] = $this->db
         ->where('n_category','3')
         ->order_by('n_date','DESC')
         ->join('category','category.c_id = news.n_category','left')
         ->get('news')
-        ->row_array(); 
+        ->row_array();
+        
         $data['help_desk'] = $this->db
         ->where('n_category','2')
         ->order_by('n_date','DESC')
@@ -86,14 +88,15 @@ class UserController extends CI_Controller{
     }
 
     public function  about(){
-
-        $this->load->view('user/about');
+        $data['category'] =$this->db->get('category')->result_array();
+        $this->load->view('user/about',$data);
     }
 
 
     public function  contact(){
         // echo "contact metodu";
-        $this->load->view('user/contact');
+        $data['category'] =$this->db->get('category')->result_array();
+        $this->load->view('user/contact',$data);
     }
      
     public function blog(){
@@ -148,9 +151,7 @@ class UserController extends CI_Controller{
        
        
 
-        $data['category'] =$this->db->where('c_id', $id)->get('category')->row_array();
-
-        $data['courses'] =$this->db->get('category')->result_array();
+        $data['category'] =$this->db->get('category')->result_array();
        
         
  
@@ -170,8 +171,7 @@ class UserController extends CI_Controller{
 
         $data['limit_5news']=$this->db
         ->limit(5)
-        ->order_by('n_date','DESC')
-        
+        ->order_by('n_date','DESC')              
         ->join('category', 'category.c_id = news.n_category','left')
         ->get('news')
         ->result_array();

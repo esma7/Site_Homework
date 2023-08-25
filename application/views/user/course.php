@@ -7,7 +7,8 @@
 <div class="container-fluid page-header" style="margin-bottom: 90px;">
     <div class="container">
         <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
-            <h3 class="display-4 text-white text-uppercase">Courses <h1 style="color:orange !important;"><?php echo $category['c_name_az']; ?></h1></h3>
+            <h3 class="display-4 text-white text-uppercase">Courses <h1 style="color:orange !important;"><?php echo $category['c_name_az']; ?></h1>
+            </h3>
             <div class="d-inline-flex text-white">
                 <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
                 <i class="fa fa-angle-double-right pt-1 px-3"></i>
@@ -31,9 +32,9 @@
             <?php foreach ($category_of as $item) { ?>
                 <div class="col-lg-4 col-md-6 mb-4" style="height:400px !important;">
                     <div class="rounded overflow-hidden mb-2">
-                        <?php if ( $item['n_file']) { ?>
+                        <?php if ($item['n_file']) { ?>
                             <img style="height:150px; width:100%;" class="img-fluid" src="<?php echo base_url('uploads/news/' . $item['n_file']); ?>" alt="">
-                             <?php } else { ?>                                                
+                        <?php } else { ?>
                             <img style="height:150px; width:100%;" class="img-fluid" src="https://hivedinn.s3.amazonaws.com/upload/photos/d-avatar.jpg?cache=0" alt class="w-px-40 h-auto rounded-circle" />
                         <?php } ?>
 
@@ -70,6 +71,26 @@
     </div>
 </div>
 
+<!-- <div class="container-fluid ">
+    <div class="container py-5">
+        <div class="row">
+            <div class="mb-5">
+                <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h3>
+                <?php foreach ($limit_5news as $item) { ?>
+                    <a class="d-flex align-items-center text-decoration-none mb-3" href="<?php echo base_url('single/' . $item['c_id']); ?>">
+                        <img style="height:100px !important; width:130px !important;" class="img-fluid rounded" src="<?php echo base_url('uploads/news/' . $item['n_file']); ?>" alt="">
+                        <div class="pl-3">
+
+                            <h6 class="m-1"><?php echo $item['n_title_' . $this->session->userdata('site_lang')]; ?></h6>
+                            <small><?php echo  date("d.m.Y", strtotime($item['n_date'])); ?></small>
+                        </div>
+                    </a>
+                <?php  } ?>
+
+            </div>
+        </div>
+    </div>
+</div> -->
 
 <!-- Category Start -->
 <div class="container-fluid py-5">
@@ -80,18 +101,18 @@
         </div>
         <div class="row">
 
-            <?php foreach ($courses as $item) { ?>
+            <?php foreach ($category as $item) { ?>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="cat-item position-relative overflow-hidden rounded mb-2">
                         <img class="img-fluid" src="<?php echo base_url('uploads/news/'); ?>abstract.jpg" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="<?php echo base_url('course/'. $item['c_id']); ?>">
+                        <a class="cat-overlay text-white text-decoration-none" href="<?php echo base_url('course/' . $item['c_id']); ?>">
                             <h4 style="color:orange !important;" class="text-white font-weight-medium"><?php echo $item['c_name_az']; ?></h4>
                             <span>1 qrup</span>
                         </a>
                     </div>
                 </div>
             <?php } ?>
-          
+
 
 
         </div>

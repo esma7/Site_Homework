@@ -82,6 +82,8 @@ class AdminController extends CI_Controller
 
         $this->load->view('admin/news/list', $data);
     }
+
+   
     public function news_create()
     {
         $data['category']=$this->db->get('category')->result_array();
@@ -100,6 +102,54 @@ class AdminController extends CI_Controller
         redirect(base_url("a_news_list"));
         // $this->load->view('admin/news/delete');
     }
+
+    public function slider_list(){
+        $this->load->view('admin/news/slider_list');
+
+    }
+    public function news_create_slider(){
+       
+        $this->load->view('admin/news/create_slider');
+    }
+    public function news_create_slider_act(){
+       
+        $title = $_POST['title'];
+        $descr= $_POST['description'];
+        $date = $_POST['date'];
+        $category = $_POST['category'];
+        $status = $_POST['status'];
+
+
+        if (!empty($title) && !empty($descr) && !empty($date) && !empty($category) && !empty($status)){
+            $data = [
+                's_title'        => $title,
+                's_description'  => $descr,      
+               
+                's_date'         => $date,
+                's_category'     => $category,
+                's_status'       => $status,
+                // 'n_file'         => $upload_name,
+                // 'n_file_ext'     => $upload_ext,
+                // 'n_creator_id' =>$_SESSION['admin_id'],
+                // 'n_updater_id' =>$_SESSION['admin_id'],
+                // 'n_status'=> 2,
+                // 'n_image'        => ,
+                // 'n_creator_id'   => ,
+                's_create_date'  => date("Y-m-d H:i:s"),
+    
+    
+            ];
+    
+            $this->db->insert('news_slider', $data);
+            redirect(base_url('a_slider_list'));
+        }else{
+            redirect($_SERVER['HTTP_REFERER']); 
+        }
+
+       
+    }
+
+
     public function news_create_act()
     {
         $title_az = $_POST['title_az'];
@@ -227,7 +277,7 @@ class AdminController extends CI_Controller
         $status = $_POST['status'];
 
         if (!empty($title_az) && !empty($descr_az) && !empty($date) && !empty($category) && !empty($status)) {
-            $config['upload_path'] = './uploads/';
+            $config['upload_path'] = 'uploads/news/';
             $config['allowed_types'] = 'gif|jpg|png|mp3|jpeg';
             $config['remove_spaces'] = true;
             // $config['max_size']     = '100';
@@ -263,6 +313,11 @@ class AdminController extends CI_Controller
 
                 ];
                 $data = $this->security->xss_clean($data);
+
+                // print_r("<pre>");
+                // print_r($data);
+                // die();
+
                 $this->db->where('n_id', $id)->update('news', $data);
                 redirect(base_url('a_news_list'));
             } else {
@@ -297,12 +352,14 @@ class AdminController extends CI_Controller
 
     public function view_news($id)
     {
-        $data = $this->security->xss_clean($data);
+        $id = $this->security->xss_clean($id);
+        
         $data["single_news"] = $this->db
         ->where('n_id', $id)
         ->join('category','category.c_id = news.n_category','left')
         ->join('status','status.s_id = news.n_status','left')
         ->get('news')->row_array();
+    
         $this->load->view('admin/news/detail', $data);
     }
 }

@@ -99,6 +99,17 @@
                     <div data-i18n="Without menu"> List</div>
                   </a>
                 </li>
+                
+                <li class="menu-item">
+                  <a href="<?php echo base_url('a_news_slider')?>" class="menu-link">
+                    <div data-i18n="Without menu"> Create slider</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="<?php echo base_url('a_slider_list')?>" class="menu-link">
+                    <div data-i18n="Without menu"> Slider list</div>
+                  </a>
+                </li>
              </ul>
              
                 

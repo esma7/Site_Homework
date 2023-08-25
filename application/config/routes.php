@@ -73,6 +73,12 @@ $route['a_news_list'] = 'AdminController/news_list';
 $route['a_news_create'] = 'AdminController/news_create';
 $route['a_news_create_act'] = 'AdminController/news_create_act';
 
+                    //slider news//
+$route['a_slider_list'] = 'AdminController/slider_list';
+$route['a_news_slider'] = 'AdminController/news_create_slider';
+$route['a_news_slider_act'] = 'AdminController/news_create_slider_act';
+
+
 $route['a_news_delete/(.*)'] = 'AdminController/deleteNews/$1';
 
 $route['a_news_update/(.*)'] = 'AdminController/update_news/$1';

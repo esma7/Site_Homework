@@ -54,7 +54,7 @@
                                 <select name="category" id="category" class="form-control">
                                     <option value="">-Select-</option>
                                     <?php foreach($category as $item){?>
-                                        <option <?php if($single_news->n_category == $item['c_id']){ echo "SELECTED";}?> value="<?php echo $item['c_id']; ?>"><?php echo $item['c_name']; ?></option>
+                                        <option <?php if($single_news->n_category == $item['c_id']){ echo "SELECTED";}?> value="<?php echo $item['c_id']; ?>"><?php echo $item['c_name_az']; ?></option>
                                     <?php } ?>
                                     
                                 </select>

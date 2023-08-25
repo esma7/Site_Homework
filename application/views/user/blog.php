@@ -92,9 +92,9 @@
                     <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">CATEGORY</h3>
                     <div class="d-flex flex-wrap m-n1">
 
-                        <?php foreach ($category as $item) { ?>
-                            <a href="" class="btn btn-outline-primary m-1"><?php echo $item['c_name_'.$this->session->userdata('site_lang')]; ?></a>
-                        <?php } ?>
+                    <?php foreach($category as $item){?>
+                                <a href="<?php echo base_url('course/'. $item['c_id']); ?>" class="btn btn-outline-primary m-1"><?php echo $item['c_name_'.$this->session->userdata('site_lang')]; ?></a>
+                           <?php } ?>
 
 
                     </div>

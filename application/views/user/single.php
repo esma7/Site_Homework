@@ -3,48 +3,48 @@
 
 
 
-    <!-- Header Start -->
-    <div class="container-fluid page-header" style="margin-bottom: 90px;">
-        <div class="container">
-            <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
-                <h3 class="display-4 text-white text-uppercase">Single</h3>
-                <div class="d-inline-flex text-white">
-                    <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
-                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                    <p class="m-0 text-uppercase">Single</p>
-                </div>
+<!-- Header Start -->
+<div class="container-fluid page-header" style="margin-bottom: 90px;">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+            <h3 class="display-4 text-white text-uppercase">Single</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Single</p>
             </div>
         </div>
     </div>
-    <!-- Header End -->
+</div>
+<!-- Header End -->
 
 <style>
-    .sekil{
-        width:100px;
-        height:100px;
-        background:transparent;
+    .sekil {
+        width: 100px;
+        height: 100px;
+        background: transparent;
         border-radius: 50%;
-        margin-right:5px;
+        margin-right: 5px;
     }
 </style>
-    <!-- Detail Start -->
-    <div class="container-fluid ">
-        <div class="container py-5">
-                         <h6 class="text-primary mb-3"><?php echo date('d-m-y', strtotime($single_data['n_date'])) ?></h6>
-                        <h1 class="mb-5"><?php echo $single_data['c_name_'.$this->session->userdata('site_lang')] ?></h1>
-                       
-            <div class="row">
-                <div class="col-lg-8">
-                    
-                    <div class="mb-5">
-                        
-                        <img class="img-fluid rounded w-100 mb-4" src="<?php echo base_url('uploads/news/'. $single_data['n_file']); ?>" alt="Image">
-                        <h4 class="mb-5"><?php echo $single_data['n_title_'.$this->session->userdata('site_lang')] ?></h4>
-                        <p><?php echo $single_data['n_description_'.$this->session->userdata('site_lang')]; ?></p>
-                        <p></p>
-                        <!-- <h2 class="mb-4"></h2> -->
-                        <!-- <img class="img-fluid rounded w-50 float-left mr-4 mb-3" src="<?php echo base_url('public/user/'); ?>img/blog-1.jpg" alt="Image"> -->
-                        <!-- <p>Diam dolor est labore duo invidunt ipsum clita et, sed et lorem voluptua tempor invidunt at
+<!-- Detail Start -->
+<div class="container-fluid ">
+    <div class="container py-5">
+        <h6 class="text-primary mb-3"><?php echo date('d-m-y', strtotime($single_data['n_date'])) ?></h6>
+        <h1 class="mb-5"><?php echo $single_data['c_name_' . $this->session->userdata('site_lang')] ?></h1>
+
+        <div class="row">
+            <div class="col-lg-8">
+
+                <div class="mb-5">
+
+                    <img class="img-fluid rounded w-100 mb-4" src="<?php echo base_url('uploads/news/' . $single_data['n_file']); ?>" alt="Image">
+                    <h4 class="mb-5"><?php echo $single_data['n_title_' . $this->session->userdata('site_lang')] ?></h4>
+                    <p><?php echo $single_data['n_description_' . $this->session->userdata('site_lang')]; ?></p>
+                    <p></p>
+                    <!-- <h2 class="mb-4"></h2> -->
+                    <!-- <img class="img-fluid rounded w-50 float-left mr-4 mb-3" src="<?php echo base_url('public/user/'); ?>img/blog-1.jpg" alt="Image"> -->
+                    <!-- <p>Diam dolor est labore duo invidunt ipsum clita et, sed et lorem voluptua tempor invidunt at
                             est sanctus sanctus. Clita dolores sit kasd diam takimata justo diam lorem sed. Magna amet
                             sed rebum eos. Clita no magna no dolor erat diam tempor rebum consetetur, sanctus labore sed
                             nonumy diam lorem amet eirmod. No at tempor sea diam kasd, takimata ea nonumy elitr
@@ -61,10 +61,10 @@
                             sed rebum eos. Clita no magna no dolor erat diam tempor rebum consetetur, sanctus labore sed
                             nonumy diam lorem amet eirmod. No at tempor sea diam kasd, takimata ea nonumy elitr
                             sadipscing gubergren erat.</p> -->
-                    </div>
+                </div>
 
-                    <!-- Comment List -->
-                    <!-- <div class="mb-5">
+                <!-- Comment List -->
+                <!-- <div class="mb-5">
                         <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">3 Comments</h3>
                         <div class="media mb-4">
                             <img src="<?php echo base_url('public/user/'); ?>img/user.jpg" alt="Image" class="img-fluid rounded-circle mr-3 mt-1"
@@ -102,9 +102,9 @@
                         </div>
                     </div> -->
 
-                    <!-- Comment Form -->
-                    <div  class=" p-5">
-                        <!-- <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Leave a comment</h3>
+                <!-- Comment Form -->
+                <div class=" p-5">
+                    <!-- <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Leave a comment</h3>
                         <form>
                             <div class="form-group">
                                 <label for="name">Name *</label>
@@ -127,45 +127,44 @@
                                 <input type="submit" value="Leave Comment" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold">
                             </div>
                         </form> -->
-                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-5 mt-lg-0">
+                <!-- Author Bio -->
+                <div class="d-flex flex-column text-center bg-dark rounded mb-5 py-5 px-4">
+                    <?php if ($single_data['a_img']) { ?>
+                        <img src="<?php echo base_url('uploads/admin/' . $single_data['a_img']); ?>" class="img-fluid rounded-circle mx-auto mb-3" style="width: 100px;">
+                    <?php } else { ?>
+                        <img src="https://hivedinn.s3.amazonaws.com/upload/photos/d-avatar.jpg?cache=0" alt class="img-fluid rounded-circle mx-auto mb-3 sekil" />
+                    <?php } ?>
+
+
+
+                    <h3 class="text-primary mb-3"><?php echo $single_data['a_name']; ?></h3>
+                    <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Tag Cloud</h3>
+                    <p class="text-white m-0">5 nomreli Mədəniyyət və Sənətkarlıq üzrə Bakı Dövlət Peşə Təhsil Mərkəzi Web dizayn müəllimi</p>
                 </div>
 
-                <div class="col-lg-4 mt-5 mt-lg-0">
-                    <!-- Author Bio -->
-                    <div class="d-flex flex-column text-center bg-dark rounded mb-5 py-5 px-4">
-                       <?php if($single_data['a_img']){?>
-                        <img src="<?php echo base_url('uploads/admin/'. $single_data['a_img']); ?>" class="img-fluid rounded-circle mx-auto mb-3" style="width: 100px;">
-                       <?php } else{ ?>
-                        <img  src="https://hivedinn.s3.amazonaws.com/upload/photos/d-avatar.jpg?cache=0" alt class="img-fluid rounded-circle mx-auto mb-3 sekil" />
-                      <?php } ?>
-                      
 
-                      
-                        <h3 class="text-primary mb-3"><?php echo $single_data['a_name']; ?></h3>
-                        <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Tag Cloud</h3>
-                        <p class="text-white m-0">5 nomreli Mədəniyyət və Sənətkarlıq üzrə Bakı Dövlət Peşə Təhsil Mərkəzi Web dizayn müəllimi</p>
-                    </div>
-
-
-                    <!-- Search Form -->
-                    <div class="mb-5">
-                        <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control form-control-lg" placeholder="Keyword">
-                                <div class="input-group-append">
-                                    <span class="input-group-text bg-transparent text-primary"><i
-                                            class="fa fa-search"></i></span>
-                                </div>
+                <!-- Search Form -->
+                <div class="mb-5">
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control form-control-lg" placeholder="Keyword">
+                            <div class="input-group-append">
+                                <span class="input-group-text bg-transparent text-primary"><i class="fa fa-search"></i></span>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
+                </div>
 
-                    <!-- Category List -->
-                    <!-- <div class="mb-5">
+                <!-- Category List -->
+                <!-- <div class="mb-5">
                         <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Categories</h3>
                         <ul class="list-group list-group-flush">
 
-                        <?php foreach($category as $item){?>
+                        <?php foreach ($category as $item) { ?>
                                 <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                                 <a href="" class="text-decoration-none h6 m-0"><?php echo $item['c_name_az']; ?></a>
                                 <span class="badge badge-primary badge-pill">20</span>
@@ -178,43 +177,43 @@
                         </ul>
                     </div> -->
 
-                    <!-- Recent Post -->
-                    <div class="mb-5">
-                        <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h3>
-                        <?php foreach($limit_5news as $item){?>
-                            <a class="d-flex align-items-center text-decoration-none mb-3" href="<?php echo base_url('single/'. $item['c_id']); ?>">
-                            <img style="height:100px !important; width:130px !important;" class="img-fluid rounded" src="<?php echo base_url('uploads/news/'. $item['n_file']); ?>" alt="">
+                <!-- Recent Post -->
+                <div class="mb-5">
+                    <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h3>
+                    <?php foreach ($limit_5news as $item) { ?>
+                        <a class="d-flex align-items-center text-decoration-none mb-3" href="<?php echo base_url('single/' . $item['c_id']); ?>">
+                            <img style="height:100px !important; width:130px !important;" class="img-fluid rounded" src="<?php echo base_url('uploads/news/' . $item['n_file']); ?>" alt="">
                             <div class="pl-3">
-                                
-                                <h6 class="m-1"><?php echo $item['n_title_'. $this->session->userdata('site_lang')]; ?></h6>
+
+                                <h6 class="m-1"><?php echo $item['n_title_' . $this->session->userdata('site_lang')]; ?></h6>
                                 <small><?php echo  date("d.m.Y", strtotime($item['n_date'])); ?></small>
                             </div>
                         </a>
-                      <?php  } ?>
-                        
-                       
-                       
-                    </div>
+                    <?php  } ?>
 
-                    <!-- Tag Cloud -->
-                    <div class="mb-5">
-                        <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Tag Cloud</h3>
-                        <div class="d-flex flex-wrap m-n1">
-                            <?php foreach($category as $item){?>
-                                <a href="<?php echo base_url('course/'. $item['c_id']); ?>" class="btn btn-outline-primary m-1"><?php echo $item['c_name_'.$this->session->userdata('site_lang')]; ?></a>
-                           <?php } ?>
-                            
-                            
-                        </div>
+
+
+                </div>
+
+                <!-- Tag Cloud -->
+                <div class="mb-5">
+                    <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Tag Cloud</h3>
+                    <div class="d-flex flex-wrap m-n1">
+                        <?php foreach ($category as $item) { ?>
+                            <a href="<?php echo base_url('course/' . $item['c_id']); ?>" class="btn btn-outline-primary m-1"><?php echo $item['c_name_' . $this->session->userdata('site_lang')]; ?></a>
+                        <?php } ?>
+
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Detail End -->
+</div>
+<!-- Detail End -->
 
 
-    <!-- Footer Start -->
-    <?php $this->load->view('user/includes/footer'); ?>
-    <!-- Footer End -->
-    <?php $this->load->view('user/includes/footerScript'); ?>
+<!-- Footer Start -->
+<?php $this->load->view('user/includes/footer'); ?>
+<!-- Footer End -->
+<?php $this->load->view('user/includes/footerScript'); ?>

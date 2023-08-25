@@ -24,7 +24,7 @@
                         <tr>
                           <th>#</th>
                           <th>Title</th>
-                          <th>Description</th>
+
                           <th>Category</th>
                           <th>Date</th>
                           <th>Image</th>
@@ -34,45 +34,50 @@
                       </thead>
                       <tbody>
 
-                        
-                        <?php  $sira =0; foreach ($get_all as $items) { $sira++ ?>
-                            <tr>
+
+                        <?php $sira = 0;
+                        foreach ($get_all as $items) {
+                          $sira++ ?>
+                          <tr>
                             <td><?php echo $sira; ?></td>
                             <td>
                               <i class="fab fa-angular fa-lg text-danger me-1"></i> <strong><?php echo $items->n_title_az; ?></strong>
                             </td>
-                            <td><?php echo $items->n_description_az; ?></td>
-                            <td><?php echo $items->c_name; ?></td>
-                            <td>
-                            <?php echo date("d-m-Y H:i", strtotime($items->n_date)); ?>
-                            </td>
-                            <td><?php if ($items->n_file_ext == '.mp3') { ?>
-                                                        <audio style="width: 180px;" controls>                                                          
-                                                            <source  src="<?php echo base_url('uploads/news/'. $items->n_file); ?>" type="audio/mpeg">
-                                                    </audio>
-                                                    <?php } else { ?>
-                                                        <img width="150px" src="<?php echo base_url('uploads/news/'. $items->n_file); ?>" alt="">
-                                                    <?php } ?></td>
 
-                            <td><?php if($items->s_status =="Active"){ ?>
-                              <span class="badge bg-label-success me-1"><?php echo $items->s_status; ?></span>
-                            <?php }else if($items->s_status =="Deactive"){?>
-                              <span class="badge bg-label-danger me-1"><?php echo $items->s_status; ?></span>
-                            <?php }else{?>
-                             <span class="badge bg-label-info me-1">Upss</span> 
-                            <?php } ?></td>
+                            <td><?php echo $items->c_name_az; ?></td>
                             <td>
-                              <a href="<?php echo base_url('a_news_view/'. $items->n_id);?>">
-                                <button  type="button" class="btn btn-info btn-sm">
+                              <?php echo date("d-m-Y H:i", strtotime($items->n_date)); ?>
+                            </td>
+                            <td>
+                              <?php if ($items->n_file_ext == '.mp3') { ?>
+                                <audio style="width: 180px;" controls>
+                                  <source src="<?php echo base_url('uploads/news/' . $items->n_file); ?>" type="audio/mpeg">
+                                </audio>
+                              <?php } else { ?>
+                                <img width="150px" src="<?php echo base_url('uploads/news/'.$items->n_file); ?>" alt="">
+                              <?php } ?>
+                            </td>
+
+                            <td><?php if ($items->s_status == "Active") { ?>
+                                <span class="badge bg-label-success me-1"><?php echo $items->s_status; ?></span>
+                              <?php } else if ($items->s_status == "Deactive") { ?>
+                                <span class="badge bg-label-danger me-1"><?php echo $items->s_status; ?></span>
+                              <?php } else { ?>
+                                <span class="badge bg-label-info me-1">Upss</span>
+                              <?php } ?>
+                            </td>
+                            <td>
+                              <a href="<?php echo base_url('a_news_view/' . $items->n_id); ?>">
+                                <button type="button" class="btn btn-info btn-sm">
                                   <i class="bx bx-detail"></i>
                                 </button>
                               </a>
-                              <a href="<?php echo base_url('a_news_update/'. $items->n_id); ?>">
-                                <button type="button" class="btn btn-warning btn-sm" >
+                              <a href="<?php echo base_url('a_news_update/' . $items->n_id); ?>">
+                                <button type="button" class="btn btn-warning btn-sm">
                                   <i class="bx bx-edit-alt"></i>
                                 </button>
                               </a>
-                              <a onclick=" return confirm('Are you sure to delete?')" href="<?php echo base_url('a_news_delete/'. $items->n_id); ?>">
+                              <a onclick=" return confirm('Are you sure to delete?')" href="<?php echo base_url('a_news_delete/' . $items->n_id); ?>">
                                 <button type="button" class="btn btn-danger btn-sm">
                                   <i class="bx bx-trash "></i>
                                 </button></a>
