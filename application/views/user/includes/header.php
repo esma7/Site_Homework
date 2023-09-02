@@ -94,7 +94,7 @@
                         <!-- <a href="<?php echo base_url('course'); ?>" class="nav-item nav-link">Courses</a> -->
 
                         <!-- <a href="<?php echo base_url('teacher') ?>" class="nav-item nav-link">Teachers</a> -->
-                        <a href="<?php echo base_url('blog') ?>" class="nav-item nav-link">All List</a>
+                        <!-- <a href="<?php echo base_url('blog') ?>" class="nav-item nav-link">All List</a> -->
                         <!-- <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">All List</a>
                                 <div class="dropdown-menu rounded-0 m-0">

@@ -38,6 +38,7 @@
 
                 <div class="mb-5">
 
+
                     <img class="img-fluid rounded w-100 mb-4" src="<?php echo base_url('uploads/news/' . $single_data['n_file']); ?>" alt="Image">
                     <h4 class="mb-5"><?php echo $single_data['n_title_' . $this->session->userdata('site_lang')] ?></h4>
                     <p><?php echo $single_data['n_description_' . $this->session->userdata('site_lang')]; ?></p>
@@ -181,7 +182,7 @@
                 <div class="mb-5">
                     <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h3>
                     <?php foreach ($limit_5news as $item) { ?>
-                        <a class="d-flex align-items-center text-decoration-none mb-3" href="<?php echo base_url('single/' . $item['c_id']); ?>">
+                        <a class="d-flex align-items-center text-decoration-none mb-3" href="<?php echo base_url('single/' . $item['n_id']); ?>">
                             <img style="height:100px !important; width:130px !important;" class="img-fluid rounded" src="<?php echo base_url('uploads/news/' . $item['n_file']); ?>" alt="">
                             <div class="pl-3">
 

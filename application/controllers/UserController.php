@@ -10,7 +10,18 @@ class UserController extends CI_Controller{
 
     public function  index(){
       
+
+        $data['slider_news'] = $this->db
+        ->limit(2)
+        ->order_by('s_date','DESC')
+        ->join('category_slider','category_slider.cat_id  = news_slider.s_category','left')
+        ->get('news_slider')
+        ->result_array();
+
         // echo "index metodu";
+        //  print_r('<pre>');
+        // print_r($data['slider_news']);
+        // die();
         $data['slider_left_side'] = $this->db
         ->limit(3)
         ->order_by('n_date','DESC')
@@ -19,9 +30,7 @@ class UserController extends CI_Controller{
         ->get('news')
         ->result_array(); 
 
-        // print_r('<pre>');
-        // print_r($data['slider_left_side']);
-        // die();
+       
 
         $data['slider_bottom_side'] = $this->db
         ->limit(6,6)
@@ -163,14 +172,17 @@ class UserController extends CI_Controller{
     public function single($id){
         $id = $this->security->xss_clean($id);
         // echo $id;
+
         $data['single_data'] = $this-> db
         ->where('n_id',$id)
         ->join('category', 'category.c_id = news.n_category','left')
+      
         ->join('admin','admin.a_id = news.n_creator_id','left')
         ->get("news")->row_array();
 
         $data['limit_5news']=$this->db
         ->limit(5)
+        
         ->order_by('n_date','DESC')              
         ->join('category', 'category.c_id = news.n_category','left')
         ->get('news')
@@ -221,7 +233,7 @@ class UserController extends CI_Controller{
                 'u_email' => $email,
             ];
             
-            $this->db->insert('user_eamil_list',$data);
+            $this->db->insert('user_email_list',$data);
             $this->session->set_flashdata('ela', "Ugurla gonderildi!");
             redirect($_SERVER['HTTP_REFERER']);
 
@@ -231,6 +243,34 @@ class UserController extends CI_Controller{
             $this->session->set_flashdata('err', "Bosluq buraxmayin!");
             redirect($_SERVER['HTTP_REFERER']);
         }
+    }
+
+    public function contact_message(){
+        $ad = $_POST['ad'];
+        $mail= $_POST['mail'];
+        $movzu = $_POST['movzu'];
+        $mesaj= $_POST['mesaj'];
+
+        if(!empty($ad) && !empty($mail) && !empty($movzu) && !empty($mesaj) ){
+            $data = [
+                'contact_name' => $ad,
+                'contact_email' => $mail,
+                'contact_subject' => $movzu,
+                'contact_message' => $mesaj,
+            ];
+            
+            $this->db->insert('contact_info',$data);
+            $this->session->set_flashdata('super', "Ugurla gonderildi!");
+            redirect($_SERVER['HTTP_REFERER']);
+
+
+
+        }else{
+            $this->session->set_flashdata('err', "Error");
+            redirect($_SERVER['HTTP_REFERER']);
+        }
+       
+
     }
 
 

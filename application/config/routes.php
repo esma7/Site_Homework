@@ -61,6 +61,7 @@ $route['course/(.*)'] = 'UserController/course/$1';
 $route['single/(.*)'] = 'UserController/single/$1';
 $route['teacher'] = 'UserController/teacher';
 $route['message'] = 'UserController/send_message';
+$route['contact_message'] = 'UserController/contact_message';
 
 //Admin
 $route['a_login'] = 'AdminController/index';
@@ -73,10 +74,19 @@ $route['a_news_list'] = 'AdminController/news_list';
 $route['a_news_create'] = 'AdminController/news_create';
 $route['a_news_create_act'] = 'AdminController/news_create_act';
 
+$route['a_news_contact'] = 'AdminController/news_contact';
+$route['a_contact_delete/(.*)'] = 'AdminController/deleteContact/$1';
+
                     //slider news//
 $route['a_slider_list'] = 'AdminController/slider_list';
 $route['a_news_slider'] = 'AdminController/news_create_slider';
 $route['a_news_slider_act'] = 'AdminController/news_create_slider_act';
+$route['a_slider_delete/(.*)'] = 'AdminController/deleteSlider/$1';
+$route['a_slider_update/(.*)'] = 'AdminController/news_slider_update/$1';
+$route['a_slider_update_act/(.*)'] = 'AdminController/news_slider_update_act/$1';
+
+$route['a_slider_view/(.*)'] = 'AdminController/slider_view/$1';
+
 
 
 $route['a_news_delete/(.*)'] = 'AdminController/deleteNews/$1';

@@ -46,7 +46,7 @@
                 <img style="height:768px!important;" class="position-relative w-100" src="<?php echo base_url('uploads/news/' . $web_design['n_file']); ?>" style="min-height: 200px; object-fit: cover;">
                 <div class="carousel-caption d-flex align-items-center justify-content-center">
                     <div class="p-5" style="width: 100%; max-width: 900px;">
-                        <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
+                        <h5 class="text-white text-uppercase mb-md-3"> 5 saylı Bakı Peşə Məktəbi </h5>
                         <a href="<?php echo base_url('single/' . $web_design['n_id']); ?>">
                             <h1 class="display-3 text-white mb-md-4"><?php echo $web_design['n_title_' . $this->session->userdata('site_lang')]; ?></h1>
                         </a>
@@ -55,32 +55,23 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-item" style="min-height: 300px;">
-                <img style="height:768px!important;" class="position-relative w-100" src="<?php echo base_url('uploads/news/' . $network_admin['n_file']); ?>" style="min-height: 200px; object-fit: cover;">
+            <?php foreach($slider_left_side as $items){?>
+                <div class="carousel-item" style="min-height: 300px;">
+                <img style="height:768px!important;" class="position-relative w-100" src="<?php echo base_url('uploads/news/' . $items['n_file']); ?>" style="min-height: 200px; object-fit: cover;">
                 <div class="carousel-caption d-flex align-items-center justify-content-center">
                     <div class="p-5" style="width: 100%; max-width: 900px;">
-                        <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                        <a href="<?php echo base_url('single/' . $system_admin['n_id']); ?>">
-                            <h1 class="display-3 text-white mb-md-4"><?php echo $system_admin['n_title_' . $this->session->userdata('site_lang')]; ?></h1>
+                        <h5 class="text-white text-uppercase mb-md-3">5 saylı Bakı Peşə Məktəbi</h5>
+                        <a href="<?php echo base_url('single/' . $items['n_id']); ?>">
+                            <h1 class="display-3 text-white mb-md-4"><?php echo $items['n_title_' . $this->session->userdata('site_lang')]; ?></h1>
                         </a>
-                        <a href="<?php echo base_url('single/' . $system_admin['n_id']); ?>" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2"><?php echo $system_admin['c_name_' . $this->session->userdata('site_lang')]; ?></a>
-                        <span style="background:transparent; border:none;" class=" btn btn-info text-primary py-md-2 px-md-4 mt-2 "><?php echo  date("d.m.Y", strtotime($system_admin['n_date'])); ?></span>
+                        <a href="<?php echo base_url('single/' . $items['n_id']); ?>" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2"><?php echo $items['c_name_' . $this->session->userdata('site_lang')]; ?></a>
+                        <span style="background:transparent; border:none;" class=" btn btn-info text-primary py-md-2 px-md-4 mt-2 "><?php echo  date("d.m.Y", strtotime($items['n_date'])); ?></span>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item" style="min-height: 300px;">
-                <img style="height:768px!important;" class="position-relative w-100" src="<?php echo base_url('uploads/news/' . $help_desk['n_file']); ?>" style="min-height: 200px; object-fit: cover;">
-                <div class="carousel-caption d-flex align-items-center justify-content-center">
-                    <div class="p-5" style="width: 100%; max-width: 900px;">
-                        <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                        <a href="<?php echo base_url('single/' . $network_admin['n_id']); ?>">
-                            <h1 class="display-3 text-white mb-md-4"><?php echo $network_admin['n_title_' . $this->session->userdata('site_lang')]; ?></h1>
-                        </a>
-                        <a href="<?php echo base_url('single/' . $network_admin['n_id']); ?>" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2"><?php echo $network_admin['c_name_' . $this->session->userdata('site_lang')]; ?></a>
-                        <span style="background:transparent; border:none;" class=" btn btn-info text-primary py-md-2 px-md-4 mt-2 "><?php echo  date("d.m.Y", strtotime($help_desk['n_date'])); ?>0</span>
-                    </div>
-                </div>
-            </div>
+           
+           <?php } ?>
+            
 
         </div>
     </div>
@@ -208,7 +199,7 @@
 <!-- Category Start -->
 
 
-<!-- Registration Start -->
+<!-- Registration Start
 <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
     <div class="container py-5">
         <div class="row align-items-center">
@@ -256,12 +247,12 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Registration End -->
 
 
 <!-- Team Start -->
-<div class="container-fluid py-5">
+<!-- <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
         <div class="text-center mb-5">
             <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Teachers</h5>
@@ -334,7 +325,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Team End -->
 
 

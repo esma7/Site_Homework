@@ -1,6 +1,11 @@
 <?php $this->load->view("admin/includes/headerStyle"); ?>
 <?php $this->load->view("admin/includes/leftSide"); ?>
 <?php $this->load->view("admin/includes/navbar"); ?>
+
+
+
+
+
 <div class="content-wrapper">
     <!-- Content -->
 
@@ -11,22 +16,22 @@
                     <div class="d-flex align-items-end row">
                         <div class="col-sm-12">
                             <div class="card">
-                                <h5 class="card-header">Bordered Table
-                                <a href="<?php echo base_url("a_news_slider"); ?>">
-                                    <button type="button" style=" float:right;" class="btn btn-success ">Create</button>
-                                </a>
+                                <h5 class="card-header">Slider List
+                                    <a href="<?php echo base_url("a_news_slider"); ?>">
+                                        <button type="button" style=" float:right;" class="btn btn-success ">Create</button>
+                                    </a>
                                 </h5>
-                                
-                                
+
+
                                 <div class="card-body">
-                                
+
                                     <div class="table-responsive text-nowrap">
                                         <table class="table table-bordered">
                                             <thead>
                                                 <tr>
                                                     <th>№</th>
                                                     <th>Title</th>
-                                                    <th>Description</th>
+                                                    <!-- <th>Description</th> -->
                                                     <th>Img</th>
                                                     <th>Category</th>
 
@@ -36,41 +41,53 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>
-                                                        <i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong>
-                                                    </td>
-                                                    <td>description Lorem ipsum dolor sit a</td>
-                                                    <td>
-                                                        <img src="" alt="sekil">
-                                                    </td>
-                                                    <td>Sport</td>
-                                                    <td>22.11.23s</td>
-                                                    <td><span class="badge bg-label-success me-1">Active</span></td>
-                                                    <td>
-
-                                                        <a href=""> <button type="button" class="btn btn-warning btn-sm">
-                                                                <i class="bx bx-edit-alt me-1"></i> Edit
-                                                            </button></a>
-                                                        <a href=""><button type="button" class="btn btn-danger btn-sm">
-                                                                <i class="bx bx-trash me-1"></i> Delete
-                                                            </button></a>
 
 
-                                                    </td>
+                                                <?php $sira=0; foreach ($get_all as $items) { $sira++ ?>
 
-                                                </tr>
+                                                    
+                                                    <tr>
+                                                        <td><?php echo $sira; ?></td>
+                                                        <td>
+                                                            <i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?php echo $items['s_title'] ?></strong>
+                                                        </td>
+                                                        <!-- <td><?php echo $items['s_description'] ?></td> -->
+                                                        <td>
+                                                            <img width="100px;" height="100px" src="<?php echo base_url('sekil/news/'. $items['s_file']) ?>" alt="">
+                                                        </td>
+                                                        <td><?php echo $items['cat_name'] ?></td>
+                                                        <td><?php echo date("d/m/Y", strtotime($items['s_date'])); ?></td>
 
+                                                        <td><?php if($items['s_status']== 'Active') {?>
 
+                                                            <span class="badge bg-label-success me-1"><?php echo $items['s_status'] ?></span>
+
+                                                       <?php } else if( $items['s_status']== 'Deactive'){?>
+
+                                                        <span class="badge bg-label-danger me-1"><?php echo $items['s_status'] ?></span>
+                                                      <?php } else{?>
+                                                        <span class="badge bg-label-info me-1">UPSS</span>
+                                                     <?php }?></td>
+                                                        <td>
+                                                            <a href="<?php echo base_url('a_slider_view/'.$items['s_id']); ?>"><button type="button" class="btn btn-info btn-sm">
+                                                                    <i class="bx bx-detail "></i>
+                                                                </button></a>
+                                                            <a href="<?php echo base_url('a_slider_update/'.$items['s_id']);?>"> <button type="button" class="btn btn-warning btn-sm">
+                                                                    <i class="bx bx-edit-alt "></i>
+                                                                </button></a>
+                                                            <a onclick="return confirm('Are you sure want to delete?')" href="<?php echo base_url('a_slider_delete/'.$items['s_id']);?>"><button type="button" class="btn btn-danger btn-sm">
+                                                                    <i class="bx bx-trash "></i>
+                                                                </button></a>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
 
                                             </tbody>
                                         </table>
+
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
