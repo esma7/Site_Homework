@@ -558,8 +558,22 @@ class AdminController extends CI_Controller
     }
     public function deleteContact($id){
         $this->db->where('contact_id', $id)->delete('contact_info');
+        redirect(base_url('a_news_contact'));
+        // $this->load->view('admin/news/contact_infor');  
+    }
+
+    public function contact_detail($id){
+        $data['get_contact'] = $this->db        
+        ->where('contact_id', $id)
+        ->get('contact_info')
+        ->row_array();
         
-        $this->load->view('admin/news/contact_infor');  
+        //  print_r('<pre>');
+        // print_r($data['get_contact']);
+       
+        // die();
+
+        $this->load->view('admin/news/contact_detail',$data); 
     }
 
 }

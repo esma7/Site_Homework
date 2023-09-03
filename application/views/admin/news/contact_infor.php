@@ -47,7 +47,7 @@
                                                     <td><span><?php echo $items['contact_message']; ?></span></td>
                                                    
                                                     <td>
-                                                            <a href=""><button type="button" class="btn btn-info btn-sm">
+                                                            <a href="<?php echo base_url('a_contact_detail/' . $items['contact_id']); ?>"><button type="button" class="btn btn-info btn-sm">
                                                                     <i class="bx bx-detail "></i>
                                                                 </button></a>
                                                            

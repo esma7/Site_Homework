@@ -107,7 +107,7 @@
                         </a>
                     </div>
                     
-                    <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="<?php echo base_url('index'); ?>">Join</a>
+                    <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="<?php echo base_url('contact'); ?>">Join</a>
                     
                     <select  class="fon" onchange="javascript:window.location.href='<?php echo base_url(); ?>LanguageSwitcher/switchLang/'+this.value;">
                         <option value="az" <?php if ($this->session->userdata('site_lang') == 'az') echo 'selected="selected"'; ?>>Az</option>
