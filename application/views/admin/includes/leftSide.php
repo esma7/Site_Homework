@@ -100,16 +100,16 @@
                   </a>
                 </li>
                 
-                <li class="menu-item">
+                <!-- <li class="menu-item">
                   <a href="<?php echo base_url('a_news_slider')?>" class="menu-link">
                     <div data-i18n="Without menu"> Create slider</div>
                   </a>
-                </li>
-                <li class="menu-item">
+                </li> -->
+                <!-- <li class="menu-item">
                   <a href="<?php echo base_url('a_slider_list')?>" class="menu-link">
                     <div data-i18n="Without menu"> Slider list</div>
                   </a>
-                </li>
+                </li> -->
                 <li class="menu-item">
                   <a href="<?php echo base_url('a_news_contact')?>" class="menu-link">
                     <div data-i18n="Without menu"> Contact list</div>

@@ -12,11 +12,14 @@ class UserController extends CI_Controller{
       
 
         $data['slider_news'] = $this->db
-        ->limit(2)
+        ->limit(1)
         ->order_by('s_date','DESC')
         ->join('category_slider','category_slider.cat_id  = news_slider.s_category','left')
         ->get('news_slider')
         ->result_array();
+
+
+
 
         // echo "index metodu";
         //  print_r('<pre>');

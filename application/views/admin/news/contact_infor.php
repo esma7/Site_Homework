@@ -28,7 +28,7 @@
                                                     <th>Email</th>
                                                     <th>Subject</th>
                                                     <!-- <th>Date</th> -->
-                                                    <th>Description</th>
+                                                    <!-- <th>Description</th> -->
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -44,7 +44,7 @@
                                                     <i class="fab fa-angular fa-lg text-danger me-3"><?php echo $items['contact_email']; ?></i>
                                                     </td>
                                                     <td><span class="badge bg-label-primary me-1"><?php echo $items['contact_subject']; ?></span></td>
-                                                    <td><span><?php echo $items['contact_message']; ?></span></td>
+                                                    <!-- <td><span><?php echo $items['contact_message']; ?></span></td> -->
                                                    
                                                     <td>
                                                             <a href="<?php echo base_url('a_contact_detail/' . $items['contact_id']); ?>"><button type="button" class="btn btn-info btn-sm">
