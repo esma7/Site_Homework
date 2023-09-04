@@ -181,8 +181,8 @@
                     <div class="cat-item position-relative overflow-hidden rounded mb-2">
                         <img class="img-fluid" src="<?php echo base_url('uploads/news/'); ?>abstract.jpg" alt="">
                         <a class="cat-overlay text-white text-decoration-none" href="<?php echo base_url('course/' . $item['c_id']); ?>">
-                            <h4 style="color:orange !important;" class="text-white font-weight-medium"><?php echo $item['c_name_az']; ?></h4>
-                            <span>1 qrup</span>
+                            <h4 style="color:orange !important;" class="text-white font-weight-medium"><?php echo $item['c_name_' . $this->session->userdata('site_lang')]; ?></h4>
+                            <!-- <span>1 qrup</span> -->
                         </a>
                     </div>
                 </div>
